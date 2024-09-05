@@ -1,20 +1,28 @@
-{ lib, config, ... }:
-
-with lib;
-with lib.my;
-
-let
-  cfg = config.modules.boot;
-in
 {
-  options.modules.boot = { };
+  lib,
+  config,
+  ...
+}:
+with lib;
+with lib.my; let
+  cfg = config.modules.boot;
+in {
+  options.modules.boot = {};
 
   config = {
     boot = {
-      kernelParams = [ "quiet" "loglevel=3" ];
-      initrd = {
-        systemd.enable = true;
-      };
+      plymouth.enable = true;
+      initrd.verbose = false;
+
+      kernelParams = [
+        "quiet"
+        "splash"
+        "boot.shell_on_fail"
+        "loglevel=3"
+        "rd.systemd.show_status=false"
+        "rd.udev.log_level=3"
+        "udev.log_priority=3"
+      ];
 
       loader = {
         timeout = 0;

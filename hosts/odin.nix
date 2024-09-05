@@ -53,20 +53,4 @@
       docker.enable = true;
     };
   };
-
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-  };
-
-  boot.plymouth.enable = true;
-
-  networking = {
-    # head -c4 /dev/urandom | od -A none -t x4
-    hostId = "f0aaa882";
-    firewall = {
-      allowedTCPPorts = [22];
-      allowedUDPPorts = [];
-    };
-  };
 }
