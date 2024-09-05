@@ -40,7 +40,7 @@ in {
         '';
 
         shellAliases = {
-          update = "sudo nixos-rebuild switch";
+          update = "sudo nixos-rebuild switch --flake github:dsluijk/nix";
           update-dev = "sudo nixos-rebuild switch --flake path:/home/${config.modules.user.username}/proj/github.com/dsluijk/nix";
           cat = "ccat";
         };
