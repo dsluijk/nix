@@ -24,7 +24,12 @@ in {
     };
 
     modules.impermanence = {
-      unsafe.userFiles = [".ssh/id_ed25519"];
+      unsafe.userFolders = [
+        {
+          directory = ".ssh";
+          mode = "0700";
+        }
+      ];
     };
   };
 }

@@ -8,6 +8,14 @@
 with lib;
 with lib.my; let
   cfg = config.modules.impermanence;
+  directoryEntry = types.submodule {
+    options = {
+      directory = mkStrOpt null;
+      mode = mkOpt (types.nullOr types.str) null;
+      user = mkOpt (types.nullOr types.str) null;
+      group = mkOpt (types.nullOr types.str) null;
+    };
+  };
 in {
   imports = [
     inputs.impermanence.nixosModules.impermanence
@@ -16,15 +24,15 @@ in {
   options.modules.impermanence = {
     safe = {
       files = mkOpt (types.listOf types.str) [];
-      folders = mkOpt (types.listOf types.str) [];
+      folders = mkOpt (types.listOf (types.coercedTo types.str (f: {directory = f;}) directoryEntry)) [];
       userFiles = mkOpt (types.listOf types.str) [];
-      userFolders = mkOpt (types.listOf types.str) [];
+      userFolders = mkOpt (types.listOf (types.coercedTo types.str (f: {directory = f;}) directoryEntry)) [];
     };
     unsafe = {
       files = mkOpt (types.listOf types.str) [];
-      folders = mkOpt (types.listOf types.str) [];
+      folders = mkOpt (types.listOf (types.coercedTo types.str (f: {directory = f;}) directoryEntry)) [];
       userFiles = mkOpt (types.listOf types.str) [];
-      userFolders = mkOpt (types.listOf types.str) [];
+      userFolders = mkOpt (types.listOf (types.coercedTo types.str (f: {directory = f;}) directoryEntry)) [];
     };
   };
 
@@ -33,30 +41,28 @@ in {
       hideMounts = true;
       files =
         [
-          "/etc/ssh/ssh_host_ed25519_key"
-          "/etc/ssh/ssh_host_ed25519_key.pub"
-          "/etc/ssh/ssh_host_rsa_key"
-          "/etc/ssh/ssh_host_rsa_key.pub"
         ]
         ++ cfg.safe.files;
       directories =
         [
           "/etc/nixos"
+          {
+            directory = "/etc/ssh";
+            mode = "0700";
+          }
         ]
-        ++ cfg.safe.folders;
+        ++ lists.forEach cfg.safe.folders (e: attrsets.filterAttrs (n: v: v != null) e);
 
       users.${config.modules.user.username} = {
         files = [] ++ cfg.safe.userFiles;
-        directories = ["proj"] ++ cfg.safe.userFolders;
+        directories = ["proj"] ++ lists.forEach cfg.safe.userFolders (e: attrsets.filterAttrs (n: v: v != null) e);
       };
     };
 
     environment.persistence."/persist-unsafe" = {
       hideMounts = true;
       files =
-        [
-          "/etc/machine-id"
-        ]
+        []
         ++ cfg.unsafe.files;
       directories =
         [
@@ -64,11 +70,11 @@ in {
           "/var/lib/nixos"
           "/var/lib/systemd/timers"
         ]
-        ++ cfg.unsafe.folders;
+        ++ lists.forEach cfg.unsafe.folders (e: attrsets.filterAttrs (n: v: v != null) e);
 
       users.${config.modules.user.username} = {
         files = [] ++ cfg.unsafe.userFiles;
-        directories = [] ++ cfg.unsafe.userFolders;
+        directories = [] ++ lists.forEach cfg.unsafe.userFolders (e: attrsets.filterAttrs (n: v: v != null) e);
       };
     };
   };

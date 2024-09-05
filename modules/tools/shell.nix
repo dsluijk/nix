@@ -41,7 +41,7 @@ in {
 
         shellAliases = {
           update = "sudo nixos-rebuild switch";
-          update-dev = "sudo nixos-rebuild switch --flake path:/home/${config.modules.user.username}/proj/github.com/dsluijk/dotfiles";
+          update-dev = "sudo nixos-rebuild switch --flake path:/home/${config.modules.user.username}/proj/github.com/dsluijk/nix";
           cat = "ccat";
         };
 
