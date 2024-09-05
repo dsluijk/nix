@@ -42,9 +42,7 @@ in {
     system.autoUpgrade = {
       enable = true;
       allowReboot = cfg.allowReboot;
-      # TODO: probably want to set this to the repo with the flake.
-      # That way it automatically reverts back to the latest commit from there.
-      flake = inputs.self.outPath;
+      flake = "github:dsluijk/nix";
       flags = [
         "-L"
       ];
