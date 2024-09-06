@@ -36,7 +36,7 @@ in {
       };
     };
 
-    modules.postgres = {
+    modules.services.postgres = {
       extraUsers = ["roundcube"];
     };
   };
