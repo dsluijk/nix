@@ -9,13 +9,13 @@ with lib;
 with lib.my; let
   cfg = config.modules.services.mail;
 in {
+  imports = [inputs.nixos-mailserver.nixosModule];
+
   options.modules.services.mail = {
     enable = mkBoolOpt false;
   };
 
   config = mkIf cfg.enable {
-    imports = [inputs.nixos-mailserver.nixosModule];
-
     mailserver = {
       enable = true;
       fqdn = "mail.dany.dev";
