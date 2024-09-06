@@ -10,7 +10,7 @@ with lib.my; let
 in {
   options.modules.services.nginx = {
     enable = mkBoolOpt false;
-    extraHosts = mkOpt (types.attrsOf inferred) {};
+    extraHosts = mkOpt types.attrs {};
   };
 
   config = mkIf cfg.enable {
