@@ -32,9 +32,9 @@
     services = {
       mail.enable = true;
       postgres.enable = true;
-      radicale.enable = false;
-      roundcube.enable = false;
-      vaultwarden.enable = false;
+      radicale.enable = true;
+      roundcube.enable = true;
+      vaultwarden.enable = true;
 
       nginx = {
         enable = true;
