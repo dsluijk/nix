@@ -11,6 +11,7 @@ in {
   options.modules.services.postgres = {
     enable = mkBoolOpt false;
     extraUsers = mkOpt (types.listOf types.str) [];
+    extraPostgresAdmins = mkOpt (types.listOf types.str) [];
   };
 
   config = mkIf cfg.enable {
@@ -27,14 +28,16 @@ in {
             })
             cfg.extraUsers);
 
-        identMap = ''
-          # ArbitraryMapName systemUser DBUser
-          superuser_map      root      postgres
-          superuser_map      ${config.modules.user.username}   postgres
-          superuser_map      postgres  postgres
-          # Let other names login as themselves
-          superuser_map      /^(.*)$   \1
-        '';
+        identMap =
+          ''
+            # ArbitraryMapName systemUser DBUser
+            superuser_map      root      postgres
+            superuser_map      ${config.modules.user.username}   postgres
+            superuser_map      postgres  postgres
+            # Let other names login as themselves
+            superuser_map      /^(.*)$   \1
+          ''
+          ++ (strings.concatMapStringsSep "\n" (a: "superuser_map    ${a}    postgres") cfg.extraPostgresAdmins);
 
         authentication = pkgs.lib.mkOverride 10 ''
           #type database  DBuser   auth-method optional_ident_map

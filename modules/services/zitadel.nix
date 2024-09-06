@@ -30,6 +30,11 @@ in {
             Password = "zitadel";
             SSL.Mode = "disable";
           };
+          Admin = {
+            Username = "postgres";
+            Password = "zitadel";
+            SSL.Mode = "disable";
+          };
         };
       };
       steps = {
@@ -69,6 +74,7 @@ in {
 
         postgres = {
           extraUsers = ["zitadel"];
+          extraPostgresAdmins = ["zitadel"];
         };
       };
     };
