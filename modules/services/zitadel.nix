@@ -51,24 +51,28 @@ in {
       };
     };
 
-    modules.services = {
-      nginx.extraHosts = {
-        "login.dany.dev" = {
-          forceSSL = true;
-          enableACME = true;
-          locations."/" = {
-            proxyPass = "http://localhost:8123/";
-            extraConfig = ''
-              proxy_set_header  X-Script-Name /;
-              proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
-              proxy_pass_header Authorization;
-            '';
+    modules = {
+      secrets.required = ["zitadel"];
+
+      services = {
+        nginx.extraHosts = {
+          "login.dany.dev" = {
+            forceSSL = true;
+            enableACME = true;
+            locations."/" = {
+              proxyPass = "http://localhost:8123/";
+              extraConfig = ''
+                proxy_set_header  X-Script-Name /;
+                proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_pass_header Authorization;
+              '';
+            };
           };
         };
-      };
 
-      postgres = {
-        extraUsers = ["zitadel"];
+        postgres = {
+          extraUsers = ["zitadel"];
+        };
       };
     };
   };
