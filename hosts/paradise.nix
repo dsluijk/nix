@@ -35,7 +35,7 @@
       radicale.enable = true;
       roundcube.enable = true;
       vaultwarden.enable = true;
-      zitadel.enable = false;
+      zitadel.enable = true;
 
       nginx = {
         enable = true;
