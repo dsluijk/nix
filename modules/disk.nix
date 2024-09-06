@@ -20,9 +20,9 @@ in {
   };
 
   config = {
-    disko.devices.disk = {
-      main =
-        {
+    disko.devices.disk =
+      {
+        main = {
           type = "disk";
           device = cfg.device;
           content = {
@@ -72,25 +72,25 @@ in {
               };
             };
           };
-        }
-        // mapAttrs (mount: disk: {
-          type = "disk";
-          device = disk;
-          content = {
-            type = "gpt";
-            partitions.data = {
-              size = "100%";
-              content = {
-                type = "btrfs";
-                extraArgs = ["-f"];
-                mountpoint = mount;
-                mountOptions = ["compress=zstd"];
-              };
+        };
+      }
+      // mapAttrs (mount: disk: {
+        type = "disk";
+        device = disk;
+        content = {
+          type = "gpt";
+          partitions.data = {
+            size = "100%";
+            content = {
+              type = "btrfs";
+              extraArgs = ["-f"];
+              mountpoint = mount;
+              mountOptions = ["compress=zstd"];
             };
           };
-        })
-        cfg.extraDisks;
-    };
+        };
+      })
+      cfg.extraDisks;
 
     fileSystems."/".neededForBoot = true;
     fileSystems."/persist".neededForBoot = true;
