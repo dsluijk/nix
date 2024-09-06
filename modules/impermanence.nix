@@ -48,7 +48,7 @@ in {
           "/etc/nixos"
           {
             directory = "/etc/ssh";
-            mode = "0700";
+            mode = "0755";
           }
         ]
         ++ lists.forEach cfg.safe.folders (e: attrsets.filterAttrs (n: v: v != null) e);
