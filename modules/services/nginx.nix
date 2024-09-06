@@ -37,6 +37,9 @@ in {
       safe.folders = [
         "/var/lib/acme"
       ];
+      unsafe.folders = [
+        "/var/log/nginx"
+      ];
     };
   };
 }
