@@ -47,6 +47,11 @@
       url = "github:dsluijk/waw";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-mailserver = {
+      url = "gitlab:simple-nixos-mailserver/nixos-mailserver/nixos-24.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {

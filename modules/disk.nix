@@ -16,61 +16,80 @@ in {
   options.modules.disk = {
     device = mkStrOpt null;
     swapSize = mkStrOpt null;
+    extraDisks = mkOpt (types.attrsOf types.str) {};
   };
 
   config = {
-    disko.devices = {
-      disk.main = {
-        type = "disk";
-        device = cfg.device;
-        content = {
-          type = "gpt";
-          partitions = {
-            ESP = {
-              name = "ESP";
-              size = "512M";
-              type = "EF00";
-              content = {
-                type = "filesystem";
-                format = "vfat";
-                mountpoint = "/boot";
+    disko.devices.disk = {
+      main =
+        {
+          type = "disk";
+          device = cfg.device;
+          content = {
+            type = "gpt";
+            partitions = {
+              ESP = {
+                name = "ESP";
+                size = "512M";
+                type = "EF00";
+                content = {
+                  type = "filesystem";
+                  format = "vfat";
+                  mountpoint = "/boot";
+                };
               };
-            };
-            swap = {
-              name = "SWAP";
-              size = cfg.swapSize;
-              content = {
-                type = "swap";
-                resumeDevice = true;
+              swap = {
+                name = "SWAP";
+                size = cfg.swapSize;
+                content = {
+                  type = "swap";
+                  resumeDevice = true;
+                };
               };
-            };
-            root = {
-              name = "root";
-              size = "100%";
-              content = {
-                type = "btrfs";
-                extraArgs = ["-f"];
-                subvolumes = {
-                  "root" = {
-                    mountpoint = "/";
-                    mountOptions = ["noatime"];
-                  };
-                  "persist" = {
-                    mountpoint = "/persist";
-                  };
-                  "persist-unsafe" = {
-                    mountpoint = "/persist-unsafe";
-                  };
-                  "nix" = {
-                    mountpoint = "/nix";
-                    mountOptions = ["compress=zstd" "noatime"];
+              root = {
+                name = "root";
+                size = "100%";
+                content = {
+                  type = "btrfs";
+                  extraArgs = ["-f"];
+                  subvolumes = {
+                    "root" = {
+                      mountpoint = "/";
+                      mountOptions = ["noatime"];
+                    };
+                    "persist" = {
+                      mountpoint = "/persist";
+                    };
+                    "persist-unsafe" = {
+                      mountpoint = "/persist-unsafe";
+                    };
+                    "nix" = {
+                      mountpoint = "/nix";
+                      mountOptions = ["compress=zstd" "noatime"];
+                    };
                   };
                 };
               };
             };
           };
-        };
-      };
+        }
+        // mapAttrs (mount: disk: {
+          type = "disk";
+          device = disk;
+          content = {
+            type = "gpt";
+            partitions.data = {
+              size = "100%";
+              content = {
+                type = "btrfs";
+                extraArgs = ["-f"];
+                mountpoint = mount;
+                mountOptions = ["compress=zstd"];
+              };
+            };
+          };
+        })
+        cfg.extraDisks;
     };
 
     fileSystems."/".neededForBoot = true;
