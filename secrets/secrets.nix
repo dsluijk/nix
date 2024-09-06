@@ -7,4 +7,5 @@ let
   systems = [odin paradise];
 in {
   "wireless.age".publicKeys = systems ++ users;
+  "zitadel.age".publicKeys = [paradise] ++ users;
 }

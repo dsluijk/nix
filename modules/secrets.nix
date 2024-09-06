@@ -28,6 +28,12 @@ in {
           owner = "root";
           group = "root";
         };
+        zitadel = {
+          file = ../secrets/zitadel.age;
+          mode = "500";
+          owner = "zitadel";
+          group = "zitadel";
+        };
       };
     };
   };
