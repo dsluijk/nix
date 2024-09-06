@@ -23,6 +23,7 @@ in {
         ExternalPort = 443;
         Database.postgres = {
           Host = "localhost";
+          Port = 5432;
           Database = "zitadel";
           User = {
             Username = "zitadel";
