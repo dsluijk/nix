@@ -30,12 +30,6 @@ in {
             Password = "zitadel";
             SSL.Mode = "disable";
           };
-          Admin = {
-            ExistingDatabase = "zitadel";
-            Username = "zitadel";
-            Password = "zitadel";
-            SSL.Mode = "disable";
-          };
         };
       };
       steps = {
