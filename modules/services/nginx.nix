@@ -28,6 +28,8 @@ in {
       virtualHosts = {} // cfg.extraHosts;
     };
 
+    networking.firewall.allowedTCPPorts = [80 443];
+
     security.acme = {
       acceptTerms = true;
       defaults.email = "acme@dany.dev";
