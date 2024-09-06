@@ -32,5 +32,11 @@ in {
       acceptTerms = true;
       defaults.email = "acme@dany.dev";
     };
+
+    modules.impermanence = {
+      safe.folders = [
+        "/var/lib/acme"
+      ];
+    };
   };
 }
