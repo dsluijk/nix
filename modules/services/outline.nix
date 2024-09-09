@@ -23,9 +23,9 @@ in {
       databaseUrl = "postgres://outline:outline@localhost:5432/outline?sslmode=disable";
 
       oidcAuthentication = {
-        authUrl = "https://login.dany.dev/application/o/authorize";
-        tokenUrl = "https://login.dany.dev/application/o/token";
-        userinfoUrl = "https://login.dany.dev/application/o/userinfo";
+        authUrl = "https://login.dany.dev/application/o/authorize/";
+        tokenUrl = "https://login.dany.dev/application/o/token/";
+        userinfoUrl = "https://login.dany.dev/application/o/userinfo/";
         clientId = "kgFF9SrUGqcG6BHb5XMJ4A7ithsw7INaDfy5QnPZ";
         clientSecretFile = config.age.secrets.outline-oidc.path;
         scopes = ["openid" "email" "profile"];
