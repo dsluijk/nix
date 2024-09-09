@@ -60,7 +60,7 @@ in {
 
         nginx = {
           enable = true;
-          virtualHosts = {
+          extraHosts = {
             "write.dany.dev" = {
               forceSSL = true;
               enableACME = true;
