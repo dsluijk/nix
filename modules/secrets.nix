@@ -28,15 +28,11 @@ in {
           owner = "root";
           group = "root";
         };
-        zitadel = {
-          file = ../secrets/zitadel.age;
+        authentik = {
+          file = ../secrets/authentik.age;
           mode = "500";
-          owner = "zitadel";
-          group = "zitadel";
-        };
-        noreply = {
-          file = ../secrets/noreply.age;
-          mode = "555";
+          owner = "authentik";
+          group = "authentik";
         };
       };
     };
