@@ -36,16 +36,16 @@ in {
             SSL.Mode = "disable";
           };
         };
-        DefaultInstance.SMTPConfiguration = {
-          SMTP = {
-            Host = "mail.dany.dev";
-            User = "noreply@dany.dev";
-            # Password = builtins.readFile config.age.secrets.noreply.path;
-          };
-          TLS = true;
-          From = "noreply@dany.dev";
-          FromName = "Login - Dany";
-        };
+        # DefaultInstance.SMTPConfiguration = {
+        #   SMTP = {
+        #     Host = "mail.dany.dev";
+        #     User = "noreply@dany.dev";
+        #     # Password = builtins.readFile config.age.secrets.noreply.path;
+        #   };
+        #   TLS = true;
+        #   From = "noreply@dany.dev";
+        #   FromName = "Login - Dany";
+        # };
       };
       steps = {
         FirstInstance = {
