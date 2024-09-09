@@ -34,6 +34,7 @@ in {
 
       smtp = {
         host = "mail.dany.dev";
+        port = 587;
         username = "noreply@dany.dev";
         fromEmail = "noreply@dany.dev";
         passwordFile = config.age.secrets.outline-smtp.path;
