@@ -54,7 +54,7 @@ in {
             UserName = "dsluijk";
             FirstName = "Dany";
             LastName = "Sluijk";
-            Password = "changeme!";
+            Password = "tdCg9Z@J6$26si%CHyb";
             Email = {
               Address = "me@dany.dev";
               Verified = true;
