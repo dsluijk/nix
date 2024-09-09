@@ -78,7 +78,7 @@ in {
         postgres = {
           enable = true;
           extraUsers = ["zitadel"];
-          usersAllowedTCP = ["zitadel"];
+          usersAllowedTCP = ["zitadel" "postgres"];
         };
       };
     };
