@@ -12,6 +12,7 @@ in {
     enable = mkBoolOpt false;
     extraUsers = mkOpt (types.listOf types.str) [];
     extraPostgresAdmins = mkOpt (types.listOf types.str) [];
+    usersAllowedTCP = mkOpt (types.listOf types.str) [];
   };
 
   config = mkIf cfg.enable {
@@ -40,11 +41,13 @@ in {
           ''
           + strings.concatMapStringsSep "\n" (a: "superuser_map    ${a}    postgres") ([] ++ cfg.extraPostgresAdmins);
 
-        authentication = pkgs.lib.mkOverride 10 ''
-          #type database  DBuser   auth-method optional_ident_map
-          local sameuser  all      peer        map=superuser_map
-          local all       postgres peer        map=superuser_map
-        '';
+        authentication =
+          pkgs.lib.mkOverride 10 ''
+            #type database  DBuser   auth-method optional_ident_map
+            local sameuser  all      peer        map=superuser_map
+            local all       postgres peer        map=superuser_map
+          ''
+          + strings.concatMapStringsSep "\n" (a: "local sameuser ${a} trust map=superuser_map") ([] ++ cfg.usersAllowedTCP);
       };
 
       postgresqlBackup = {
