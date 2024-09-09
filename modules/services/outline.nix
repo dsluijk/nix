@@ -41,7 +41,7 @@ in {
     };
 
     modules = {
-      secrets.required = ["outline"];
+      secrets.required = ["outline-oidc" "outline-smtp"];
 
       impermanence = {
         safe.folders = [
