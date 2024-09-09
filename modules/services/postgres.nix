@@ -48,6 +48,7 @@ in {
             local all       postgres peer        map=superuser_map
           ''
           + strings.concatMapStringsSep "\n" (a: "host sameuser ${a} 127.0.0.1/32 trust") ([] ++ cfg.usersAllowedTCP)
+          + "\n"
           + strings.concatMapStringsSep "\n" (a: "host sameuser ${a} ::1/128 trust") ([] ++ cfg.usersAllowedTCP);
       };
 
