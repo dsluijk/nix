@@ -34,6 +34,10 @@ in {
           owner = "zitadel";
           group = "zitadel";
         };
+        noreply = {
+          file = ../secrets/noreply.age;
+          mode = "555";
+        };
       };
     };
   };

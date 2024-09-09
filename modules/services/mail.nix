@@ -39,6 +39,14 @@ in {
           hashedPassword = "$2a$10$6a9NpmHrOQKo3O8yt5efgeNOu0ZMtBTs2ttG.uAizTWhY86srDKeK";
           aliases = ["@dany.dev" "@atlasdev.nl"];
         };
+        "noreply@dany.dev" = {
+          name = "noreply@dany.dev";
+          quota = "1G";
+          sendOnly = true;
+          # TODO: this really shouldn't be in here, especially not public.
+          # Should switch to SSO asap.
+          hashedPassword = "$2b$05$5uoWG3yZNh5gpqQlDw520udbmXqqhbM/jTWrqWE1W8ohw62fTNZU6";
+        };
       };
     };
 
