@@ -47,7 +47,7 @@ in {
             local sameuser  all      peer        map=superuser_map
             local all       postgres peer        map=superuser_map
           ''
-          + strings.concatMapStringsSep "\n" (a: "local sameuser ${a} trust map=superuser_map") ([] ++ cfg.usersAllowedTCP);
+          + strings.concatMapStringsSep "\n" (a: "local sameuser ${a} trust") ([] ++ cfg.usersAllowedTCP);
       };
 
       postgresqlBackup = {
