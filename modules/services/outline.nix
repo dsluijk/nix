@@ -16,6 +16,7 @@ in {
   config = mkIf cfg.enable {
     services.outline = {
       enable = true;
+      port = 8345;
       publicUrl = "https://write.dany.dev";
       forceHttps = false;
       storage.storageType = "local";
@@ -50,10 +51,30 @@ in {
         ];
       };
 
-      services.postgres = {
-        enable = true;
-        extraUsers = ["outline"];
-        usersAllowedTCP = ["outline"];
+      services = {
+        postgres = {
+          enable = true;
+          extraUsers = ["outline"];
+          usersAllowedTCP = ["outline"];
+        };
+
+        nginx = {
+          enable = true;
+          virtualHosts = {
+            "write.dany.dev" = {
+              forceSSL = true;
+              enableACME = true;
+              locations."/" = {
+                proxyPass = "http://localhost:${config.services.outline.port}/";
+                extraConfig = ''
+                  proxy_set_header  X-Script-Name /;
+                  proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+                  proxy_pass_header Authorization;
+                '';
+              };
+            };
+          };
+        };
       };
     };
   };
