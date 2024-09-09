@@ -64,7 +64,7 @@ in {
     };
 
     modules = {
-      secrets.required = ["zitadel"];
+      secrets.required = ["zitadel" "noreply"];
 
       services = {
         nginx = {
