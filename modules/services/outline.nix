@@ -20,7 +20,7 @@ in {
       publicUrl = "https://write.dany.dev";
       forceHttps = false;
       storage.storageType = "local";
-      databaseUrl = "postgres://outline:@localhost:5432/outline";
+      databaseUrl = "postgres://outline:@localhost:5432/outline?sslmode=disable";
 
       oidcAuthentication = {
         authUrl = "https://login.dany.dev/application/o/authorize";
