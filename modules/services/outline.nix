@@ -38,6 +38,7 @@ in {
         port = 587;
         username = "noreply@dany.dev";
         fromEmail = "noreply@dany.dev";
+        replyEmail = "me@dany.dev";
         passwordFile = config.age.secrets.outline-smtp.path;
       };
     };
