@@ -40,7 +40,7 @@ in {
           SMTP = {
             Host = "mail.dany.dev";
             User = "noreply@dany.dev";
-            Password = builtins.readfile config.age.secrets.noreply.path;
+            Password = builtins.readFile config.age.secrets.noreply.path;
           };
           TLS = true;
           From = "noreply@dany.dev";
