@@ -8,4 +8,6 @@ let
 in {
   "wireless.age".publicKeys = systems ++ users;
   "authentik.age".publicKeys = [paradise] ++ users;
+  "outline/oidc.age".publicKeys = [paradise] ++ users;
+  "outline/smtp.age".publicKeys = [paradise] ++ users;
 }

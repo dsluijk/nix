@@ -34,6 +34,18 @@ in {
           owner = "authentik";
           group = "authentik";
         };
+        outline-oidc = {
+          file = ../secrets/outline/oidc.age;
+          mode = "500";
+          owner = "outline";
+          group = "outline";
+        };
+        outline-smtp = {
+          file = ../secrets/outline/smtp.age;
+          mode = "500";
+          owner = "outline";
+          group = "outline";
+        };
       };
     };
   };

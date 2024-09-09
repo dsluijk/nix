@@ -36,6 +36,7 @@
       roundcube.enable = true;
       vaultwarden.enable = true;
       authentik.enable = true;
+      outline.enable = true;
 
       nginx = {
         enable = true;
