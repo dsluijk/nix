@@ -32,7 +32,7 @@ in {
             }
             {
               timeout = 600;
-              on-timeout = "${pkgs.systemd}/bin/systemctl suspend";
+              on-timeout = "${pkgs.systemd}/bin/systemctl suspend-then-hibernate";
               on-resume = "";
             }
           ];
