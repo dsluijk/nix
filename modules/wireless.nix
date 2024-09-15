@@ -17,15 +17,15 @@ in {
 
     networking.wireless = {
       enable = true;
-      environmentFile = config.age.secrets.wireless.path;
+      secretsFile = config.age.secrets.wireless.path;
 
       networks =
         {
-          "The Promised LAN".psk = "@PSK_THE_PROMISED_LAN@";
-          "AbcoudeNMDT".psk = "@PSK_ABCOUDE_NMDT@";
-          "Zebrasoma".psk = "@PSK_ZEBRASOMA@";
-          "Cobalt".psk = "@PSK_COBALT@";
-          "Proteus-Eretes Wifi".psk = "@PSK_PROTEUS_ERETES_WIFI@";
+          "The Promised LAN".pskRaw = "ext:PSK_THE_PROMISED_LAN";
+          "AbcoudeNMDT".pskRaw = "ext:PSK_ABCOUDE_NMDT";
+          "Zebrasoma".pskRaw = "ext:PSK_ZEBRASOMA";
+          "Cobalt".pskRaw = "ext:PSK_COBALT";
+          "Proteus-Eretes Wifi".pskRaw = "ext:PSK_PROTEUS_ERETES_WIFI";
 
           "eduroam".auth = ''
             key_mgmt=WPA-EAP
@@ -33,7 +33,7 @@ in {
             identity="dsluijk@tudelft.nl"
             anonymous_identity="anonymous@tudelft.nl"
             phase2="auth=MSCHAPV2"
-            password="@PSK_EDUROAM@"
+            password=ext:PSK_EDUROAM
           '';
         }
         // (mapAttrs (_: psk: {inherit psk;}) cfg.extra);

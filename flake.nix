@@ -1,7 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs";
 
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
@@ -17,7 +16,7 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -28,7 +27,7 @@
     };
 
     stylix = {
-      url = "github:danth/stylix/release-24.05";
+      url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs."home-manager".follows = "home-manager";
     };
@@ -49,7 +48,7 @@
     };
 
     nixos-mailserver = {
-      url = "gitlab:simple-nixos-mailserver/nixos-mailserver/nixos-24.05";
+      url = "gitlab:simple-nixos-mailserver/nixos-mailserver";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -62,7 +61,6 @@
   outputs = inputs @ {
     self,
     nixpkgs,
-    nixpkgs-unstable,
     ...
   }: let
     inherit (lib.my) mapModules mapModulesRec mapHosts;
@@ -77,7 +75,6 @@
       };
 
     pkgs = mkPkgs nixpkgs [self.overlay];
-    pkgs' = mkPkgs nixpkgs-unstable [self.overlay];
 
     lib =
       nixpkgs.lib.extend
@@ -91,7 +88,6 @@
     lib = lib.my;
 
     overlay = final: prev: {
-      unstable = pkgs';
       my = self.packages."${system}";
     };
 

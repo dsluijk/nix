@@ -14,7 +14,7 @@ in {
   config = mkIf cfg.enable {
     home-manager.users.${config.modules.user.username} = {pkgs, ...}: {
       home.packages = with pkgs; [
-        gnome.nautilus
+        nautilus
       ];
     };
   };

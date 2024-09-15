@@ -10,7 +10,7 @@ with lib.my; let
 in {
   options.modules.development.python = {
     enable = mkBoolOpt false;
-    package = mkOpt types.package pkgs.unstable.python3;
+    package = mkOpt types.package pkgs.python3;
   };
 
   config = mkIf cfg.enable {

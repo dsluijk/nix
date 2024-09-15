@@ -23,6 +23,8 @@
       extra = {};
     };
 
+    bluetooth.enable = true;
+
     theme.wallpaper = ../assets/wallpapers/mountains.jpg;
 
     desktop.hyprland = {

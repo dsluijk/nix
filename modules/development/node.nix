@@ -10,7 +10,7 @@ with lib.my; let
 in {
   options.modules.development.node = {
     enable = mkBoolOpt false;
-    package = mkOpt types.package pkgs.unstable.nodejs_22;
+    package = mkOpt types.package pkgs.nodejs_22;
   };
 
   config = mkIf cfg.enable {
