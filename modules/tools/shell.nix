@@ -51,7 +51,6 @@ in {
           plugins = [
             "colorize"
             "common-aliases"
-            "fd"
             "magic-enter"
             "perms"
             "sudo"
