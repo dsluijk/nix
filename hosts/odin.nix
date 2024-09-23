@@ -12,6 +12,7 @@
 
   modules = {
     hm.stateVersion = "24.05";
+    optimize.allowReboot = false;
 
     disk = {
       device = "/dev/disk/by-id/nvme-Samsung_SSD_990_PRO_2TB_S7DNNJ0X116212L";
