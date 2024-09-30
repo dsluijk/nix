@@ -11,6 +11,7 @@ in {
   options.modules.bluetooth = {
     enable = mkBoolOpt false;
     onBoot = mkBoolOpt true;
+    mpris = mkBoolOpt true;
   };
 
   config = mkIf cfg.enable {
@@ -18,6 +19,10 @@ in {
       enable = true;
       powerOnBoot = cfg.onBoot;
       settings.General.Experimental = true;
+    };
+
+    home-manager.users.${config.modules.user.username} = {pkgs, ...}: {
+      services.mpris-proxy.enable = cfg.mpris;
     };
 
     modules.impermanence = {
