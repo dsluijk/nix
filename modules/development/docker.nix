@@ -29,5 +29,11 @@ in {
     users.users.${config.modules.user.username} = {
       extraGroups = ["docker"];
     };
+
+    modules.impermanence = {
+      unsafe.folders = [
+        "/var/lib/docker"
+      ];
+    };
   };
 }
