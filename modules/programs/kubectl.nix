@@ -24,5 +24,12 @@ in {
         fluxcd
       ];
     };
+
+    modules.impermanence = {
+      unsafe.userFolders = [
+        ".kube"
+        ".config/gcloud"
+      ];
+    };
   };
 }
