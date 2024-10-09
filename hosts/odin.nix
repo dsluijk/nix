@@ -47,6 +47,7 @@
       kubectl.enable = true;
       bruno.enable = true;
       discord.enable = true;
+      bambustudio.enable = true;
     };
 
     development = {
