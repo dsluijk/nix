@@ -2,6 +2,7 @@
   self,
   config,
   pkgs,
+  vscode-extensions,
   ...
 }: {
   imports = [
@@ -30,6 +31,7 @@
 
     desktop.hyprland = {
       enable = true;
+      xwayland = false;
     };
 
     tools = {
@@ -39,7 +41,6 @@
     programs = {
       kitty.enable = true;
       firefox.enable = true;
-      vscode.enable = true;
       spotify.enable = true;
       libreoffice.enable = true;
       mpv.enable = true;
@@ -48,6 +49,11 @@
       bruno.enable = true;
       discord.enable = true;
       bambustudio.enable = true;
+
+      vscode = {
+        enable = true;
+        additionalExtensions = with vscode-extensions; [dtoplak.vscode-glsllint slevesque.shader];
+      };
     };
 
     development = {
