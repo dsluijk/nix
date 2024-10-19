@@ -2,7 +2,6 @@
   self,
   config,
   pkgs,
-  vscode-extensions,
   ...
 }: {
   imports = [
@@ -49,11 +48,7 @@
       bruno.enable = true;
       discord.enable = true;
       bambustudio.enable = true;
-
-      vscode = {
-        enable = true;
-        additionalExtensions = with vscode-extensions; [dtoplak.vscode-glsllint slevesque.shader];
-      };
+      vscode.enable = true;
     };
 
     development = {
@@ -61,6 +56,8 @@
       nuxt.enable = true;
       python.enable = true;
       docker.enable = true;
+      cg.enable = true;
+      ccache.enable = true;
     };
   };
 }
