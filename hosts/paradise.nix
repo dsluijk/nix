@@ -37,6 +37,7 @@
       vaultwarden.enable = true;
       authentik.enable = true;
       outline.enable = true;
+      headscale.enable = true;
 
       nginx = {
         enable = true;

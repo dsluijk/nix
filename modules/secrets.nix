@@ -46,6 +46,12 @@ in {
           owner = "outline";
           group = "outline";
         };
+        headscale-oidc = {
+          file = ../secrets/headscale/oidc.age;
+          mode = "500";
+          owner = "headscale";
+          group = "headscale";
+        };
       };
     };
   };
