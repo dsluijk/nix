@@ -24,6 +24,7 @@ in {
         db_type = "postgres";
         db_host = "/var/run/postgresql";
         db_name = "headscale";
+        db_user = "headscale";
 
         oidc = {
           issuer = "https://login.dany.dev/application/o/headscale/";
