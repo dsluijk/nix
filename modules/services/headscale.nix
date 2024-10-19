@@ -30,10 +30,12 @@ in {
           issuer = "https://login.dany.dev/application/o/headscale/";
           client_id = "pO0k3omaCGjksh5gklKzcUmdZIbkkvmSIceOL2yl";
           client_secret_path = config.age.secrets.headscale-oidc.path;
-
-          authUrl = "https://login.dany.dev/application/o/authorize/";
-          tokenUrl = "https://login.dany.dev/application/o/token/";
-          userinfoUrl = "https://login.dany.dev/application/o/userinfo/";
+          scope = [
+            "openid"
+            "profile"
+            "email"
+            "offline_access"
+          ];
         };
       };
     };
