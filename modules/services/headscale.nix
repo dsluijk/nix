@@ -46,29 +46,31 @@ in {
         ];
       };
 
-      postgres = {
-        enable = true;
-        extraUsers = ["headscale"];
-      };
+      services = {
+        postgres = {
+          enable = true;
+          extraUsers = ["headscale"];
+        };
 
-      nginx = {
-        enable = true;
-        extraHosts = {
-          "connect.dany.dev" = {
-            forceSSL = true;
-            enableACME = true;
-            locations."/" = {
-              proxyPass = "http://localhost:${toString config.services.headscale.port}/";
-              proxyWebsockets = true;
-              extraConfig = ''
-                proxy_set_header  X-Script-Name /;
-                proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
-                proxy_pass_header Authorization;
-                proxy_buffering off;
-                proxy_set_header X-Real-IP $remote_addr;
-                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-                proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
-              '';
+        nginx = {
+          enable = true;
+          extraHosts = {
+            "connect.dany.dev" = {
+              forceSSL = true;
+              enableACME = true;
+              locations."/" = {
+                proxyPass = "http://localhost:${toString config.services.headscale.port}/";
+                proxyWebsockets = true;
+                extraConfig = ''
+                  proxy_set_header  X-Script-Name /;
+                  proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+                  proxy_pass_header Authorization;
+                  proxy_buffering off;
+                  proxy_set_header X-Real-IP $remote_addr;
+                  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                  proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
+                '';
+              };
             };
           };
         };
