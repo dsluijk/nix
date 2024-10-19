@@ -19,7 +19,7 @@ in {
       address = "127.0.0.1";
 
       settings = {
-        server_url = "https://connect.dany.dev:443";
+        server_url = "https://connect.dany.dev";
 
         db_type = "postgres";
         db_host = "/var/run/postgresql";
