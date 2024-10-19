@@ -39,6 +39,11 @@
       outline.enable = true;
       headscale.enable = true;
 
+      tailscale = {
+        enable = true;
+        routingFeatures = "server";
+      };
+
       nginx = {
         enable = true;
         extraHosts = {

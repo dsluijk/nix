@@ -59,5 +59,9 @@
       cg.enable = true;
       ccache.enable = true;
     };
+
+    services = {
+      tailscale.enable = true;
+    };
   };
 }
