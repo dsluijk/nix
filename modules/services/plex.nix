@@ -35,9 +35,6 @@ in {
             extraConfig = ''
               send_timeout 100m;
 
-              ssl_stapling on;
-              ssl_stapling_verify on;
-
               proxy_pass_header Authorization;
               proxy_buffering off;
               proxy_redirect off;
