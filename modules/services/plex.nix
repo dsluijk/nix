@@ -11,12 +11,14 @@ in {
   options.modules.services.plex = {
     enable = mkBoolOpt false;
     dataDir = mkStrOpt "/data/plex";
+    openFirewall = mkBoolOpt true;
   };
 
   config = mkIf cfg.enable {
     services.plex = {
       enable = true;
       dataDir = cfg.dataDir;
+      openFirewall = cfg.openFirewall;
     };
 
     modules.services.nginx = {
