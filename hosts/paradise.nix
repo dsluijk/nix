@@ -39,6 +39,11 @@
       outline.enable = true;
       headscale.enable = true;
 
+      plex = {
+        enable = true;
+        dataDir = "/data/plex";
+      };
+
       tailscale = {
         enable = true;
         routingFeatures = "server";
