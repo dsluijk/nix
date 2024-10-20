@@ -27,7 +27,7 @@ in {
         settings = {
           auth = {
             type = "htpasswd";
-            htpasswd_filename = htpasswd;
+            htpasswd_filename = toString htpasswd;
             htpasswd_encryption = "bcrypt";
           };
         };
