@@ -20,7 +20,6 @@ in {
         additionalExtensions = with vscode-extensions; [
           dtoplak.vscode-glsllint # GLSL Linting
           slevesque.shader # Required for shaders
-          ms-vscode.cpptools-extension-pack # C++
           twxs.cmake # CMake
         ];
       };
