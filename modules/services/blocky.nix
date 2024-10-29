@@ -10,7 +10,6 @@ with lib.my; let
 in {
   options.modules.services.blocky = {
     enable = mkBoolOpt false;
-    prometheus = mkBoolOpt false;
   };
 
   config = mkIf cfg.enable {
@@ -18,8 +17,6 @@ in {
       enable = true;
 
       settings = {
-        prometheus.enable = cfg.prometheus.enable;
-
         upstreams = {
           init.strategy = "fast";
           groups.default = [
