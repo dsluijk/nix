@@ -38,6 +38,7 @@
       authentik.enable = true;
       outline.enable = true;
       headscale.enable = true;
+      blocky.enable = true;
 
       plex = {
         enable = true;
