@@ -22,6 +22,7 @@ in {
       domains = ["dany.dev" "atlasdev.nl"];
       certificateScheme = "acme-nginx";
       openFirewall = true;
+      localDnsResolver = false;
 
       dmarcReporting = {
         enable = true;
