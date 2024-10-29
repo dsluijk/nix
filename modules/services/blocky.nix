@@ -17,6 +17,8 @@ in {
       enable = true;
 
       settings = {
+        ports.dns = "0.0.0.0:53, [::1]:53";
+
         upstreams = {
           init.strategy = "fast";
           groups.default = [
