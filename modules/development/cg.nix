@@ -19,6 +19,7 @@ in {
         enable = true;
         additionalExtensions = with vscode-extensions; [
           dtoplak.vscode-glsllint # GLSL Linting
+          circledev.glsl-canvas # GLSL Preview
           slevesque.shader # Required for shaders
           twxs.cmake # CMake
         ];
