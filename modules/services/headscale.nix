@@ -21,10 +21,15 @@ in {
       settings = {
         server_url = "https://connect.dany.dev";
 
-        db_type = "postgres";
-        db_host = "/var/run/postgresql";
-        db_name = "headscale";
-        db_user = "headscale";
+        database = {
+          type = "postgres";
+
+          postgres = {
+            host = "/var/run/postgresql";
+            name = "headscale";
+            user = "headscale";
+          };
+        };
 
         oidc = {
           issuer = "https://login.dany.dev/application/o/headscale/";
