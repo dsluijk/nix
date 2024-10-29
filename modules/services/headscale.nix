@@ -21,6 +21,11 @@ in {
       settings = {
         server_url = "https://connect.dany.dev";
 
+        dns = {
+          base_domain = "tailnet.dany.dev";
+          search_domains = ["dany.home"];
+        };
+
         database = {
           type = "postgres";
 
