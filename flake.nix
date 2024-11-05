@@ -42,11 +42,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    waw = {
-      url = "github:dsluijk/waw";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nixos-mailserver = {
       url = "gitlab:simple-nixos-mailserver/nixos-mailserver";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -55,6 +50,16 @@
     authentik-nix = {
       url = "github:nix-community/authentik-nix";
       # inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    walker = {
+      url = "github:abenz1267/walker";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

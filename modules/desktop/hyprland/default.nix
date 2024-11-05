@@ -91,7 +91,7 @@ in {
           ];
           bind =
             [
-              "$mod, Space, exec, ags -t applauncher -b waw"
+              "$mod, Space, exec, walker"
               "$mod, F, fullscreen, 0"
               "$mod, Return, exec, $terminal"
               "$mod, W, killactive,"
