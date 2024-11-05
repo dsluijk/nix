@@ -10,6 +10,7 @@ with lib.my; let
 in {
   options.modules.tools.git = {
     enable = mkBoolOpt true;
+    lfs = mkBoolOpt true;
     name = mkStrOpt "Dany Sluijk";
     email = mkStrOpt "me@dany.dev";
   };
@@ -18,6 +19,7 @@ in {
     home-manager.users.${config.modules.user.username} = {pkgs, ...}: {
       programs.git = {
         enable = true;
+        lfs.enable = cfg.lfs;
         userName = cfg.name;
         userEmail = cfg.email;
         extraConfig = {
