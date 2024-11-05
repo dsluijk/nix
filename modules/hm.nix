@@ -17,6 +17,7 @@ in {
       useGlobalPkgs = true;
       useUserPackages = true;
       extraSpecialArgs = {inherit inputs;};
+      backupFileExtension = "backup";
 
       users.${config.modules.user.username} = {pkgs, ...}: {
         programs.home-manager.enable = true;
