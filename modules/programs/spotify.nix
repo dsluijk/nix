@@ -21,6 +21,7 @@ in {
     modules.impermanence = {
       unsafe.userFolders = [
         ".config/spotify"
+        ".cache/spotify"
       ];
     };
   };
