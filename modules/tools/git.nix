@@ -22,6 +22,7 @@ in {
         userEmail = cfg.email;
         extraConfig = {
           pull.ff = "only";
+          push.autoSetupRemote = true;
           init.defaultBranch = "main";
         };
       };
