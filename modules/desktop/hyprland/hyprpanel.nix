@@ -15,6 +15,8 @@ in {
       (nerdfonts.override {fonts = ["JetBrainsMono"];})
     ];
 
+    services.upower.enable = true;
+
     home-manager.users.${config.modules.user.username} = {pkgs, ...}: {
       wayland.windowManager.hyprland.settings."exec-once" = [
         "${inputs.hyprpanel.packages.${system}.default}/bin/hyprpanel"
