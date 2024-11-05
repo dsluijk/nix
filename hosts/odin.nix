@@ -49,6 +49,7 @@
       discord.enable = true;
       bambustudio.enable = true;
       vscode.enable = true;
+      sshagent.enable = true;
     };
 
     development = {
