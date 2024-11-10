@@ -1,6 +1,7 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs/68f4d47d0c18eac85d7c654d3f12c756cc1a48a2";
+    flake-compat.url = "github:edolstra/flake-compat";
 
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
@@ -30,6 +31,7 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs."home-manager".follows = "home-manager";
+      inputs.flake-compat.follows = "flake-compat";
     };
 
     hyprwm-contrib = {
@@ -40,16 +42,19 @@
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-compat.follows = "flake-compat";
     };
 
     nixos-mailserver = {
       url = "gitlab:simple-nixos-mailserver/nixos-mailserver";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-compat.follows = "flake-compat";
     };
 
     authentik-nix = {
       url = "github:nix-community/authentik-nix";
       # inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-compat.follows = "flake-compat";
     };
 
     hyprpanel = {
