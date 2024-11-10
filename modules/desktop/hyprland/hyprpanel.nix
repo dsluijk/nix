@@ -38,7 +38,7 @@ in {
             "bar.clock.format" = "%d %b %H:%M:%S";
             "wallpaper.enable" = false;
             "menus.dashboard.powermenu.avatar.image" = ../../../assets/profile.jpg;
-            "theme.bar.buttons.enableBorders" = true;
+            "theme.bar.buttons.enableBorders" = false;
             "bar.media.format" = "{title}";
             "bar.media.show_active_only" = true;
             "theme.bar.transparent" = true;
