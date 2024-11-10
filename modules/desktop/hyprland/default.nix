@@ -10,7 +10,7 @@ with lib.my; let
 in {
   options.modules.desktop.hyprland = {
     enable = mkBoolOpt false;
-    xwayland = mkBoolOpt false;
+    xwayland = mkBoolOpt true;
     polkit = mkBoolOpt true;
   };
 
