@@ -20,7 +20,6 @@ in {
     home-manager.users.${config.modules.user.username} = {pkgs, ...}: {
       programs.kitty = {
         enable = true;
-        theme = "Doom Vibrant";
 
         shellIntegration.enableZshIntegration = config.modules.tools.shell.enable;
       };
