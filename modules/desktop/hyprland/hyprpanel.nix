@@ -46,6 +46,7 @@ in {
             "theme.bar.outer_spacing" = "0.6em";
             "theme.bar.buttons.spacing" = "0.0em";
             "theme.bar.buttons.radius" = "0.0em";
+            "notifications.ignore" = ["spotify"];
           };
         };
       };
