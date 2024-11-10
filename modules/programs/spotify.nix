@@ -18,6 +18,9 @@ in {
       ];
     };
 
+    # Local discovery
+    networking.firewall.allowedUDPPorts = [5353];
+
     modules.impermanence = {
       unsafe.userFolders = [
         ".config/spotify"
