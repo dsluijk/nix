@@ -30,7 +30,6 @@
 
     desktop.hyprland = {
       enable = true;
-      xwayland = false;
     };
 
     tools = {
