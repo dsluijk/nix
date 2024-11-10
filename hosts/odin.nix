@@ -50,6 +50,7 @@
       bambustudio.enable = true;
       vscode.enable = true;
       sshagent.enable = true;
+      steam.enable = true;
     };
 
     development = {
