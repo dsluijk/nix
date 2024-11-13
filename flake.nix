@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/68f4d47d0c18eac85d7c654d3f12c756cc1a48a2";
+    nixpkgs.url = "github:NixOS/nixpkgs";
     flake-compat.url = "github:edolstra/flake-compat";
 
     nixos-hardware = {
