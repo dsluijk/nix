@@ -14,7 +14,7 @@ in {
 
       settings = rec {
         initial_session = {
-          command = "${pkgs.hyprland}/bin/Hyprland";
+          command = "${pkgs.hyprland}/bin/Hyprland >/dev/null";
           user = "${config.modules.user.username}";
         };
         default_session = initial_session;
