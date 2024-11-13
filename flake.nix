@@ -28,7 +28,8 @@
     };
 
     stylix = {
-      url = "github:danth/stylix";
+      # https://github.com/danth/stylix/pull/610
+      url = "github:danth/stylix/762c07ee10b381bc8e085be5b6c2ec43139f13b0";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs."home-manager".follows = "home-manager";
       inputs.flake-compat.follows = "flake-compat";
