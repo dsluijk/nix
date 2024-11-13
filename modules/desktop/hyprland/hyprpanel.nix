@@ -37,7 +37,7 @@ in {
             "bar.workspaces.numbered_active_indicator" = "highlight";
             "bar.network.showWifiInfo" = true;
             "bar.battery.hideLabelWhenFull" = true;
-            "bar.clock.format" = "%d %b %H:%M:%S";
+            "bar.clock.format" = "%H:%M %d %b";
             "wallpaper.enable" = false;
             "menus.dashboard.powermenu.avatar.image" = ../../../assets/profile.jpg;
             "bar.media.format" = "{title}";
@@ -51,6 +51,32 @@ in {
             "bar.workspaces.workspaces" = 0;
             "theme.bar.buttons.workspaces.numbered_active_highlight_padding" = "0.4em";
             "notifications.ignore" = ["spotify"];
+            "bar.layouts" = {
+              "0" = {
+                "left" = ["dashboard" "workspaces" "windowtitle"];
+                "middle" = [];
+                "right" = [
+                  "media"
+                  "volume"
+                  # "network"
+                  "bluetooth"
+                  "battery"
+                  "clock"
+                  "systray"
+                  "notifications"
+                ];
+              };
+              "1" = {
+                "left" = ["dashboard" "workspaces" "windowtitle"];
+                "middle" = [];
+                "right" = ["media" "volume" "clock" "notifications"];
+              };
+              "2" = {
+                "left" = ["dashboard" "workspaces" "windowtitle"];
+                "middle" = [];
+                "right" = ["media" "volume" "clock" "notifications"];
+              };
+            };
           };
         };
       };
