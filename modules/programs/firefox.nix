@@ -64,6 +64,10 @@ in {
               install_url = "https://addons.mozilla.org/firefox/downloads/latest/nederlands-nl-language-pack/latest.xpi";
               installation_mode = "force_installed";
             };
+            "nl-NL@dictionaries.addons.mozilla.org" = {
+              install_url = "https://addons.mozilla.org/firefox/downloads/file/3776797/woordenboek_nederlands-4.20.19.xpi";
+              installation_mode = "force_installed";
+            };
           };
           "3rdparty" = {
             Extensions = {
@@ -125,13 +129,15 @@ in {
             };
             "browser.newtabpage.pinned" = {
               Status = "locked";
-              Value = ''                [
-                                {
-                                  "url": "https://mail.dany.dev",
-                                  "label": "Webmail",
-                                  "searchTopSite": false
-                                }
-                              ]'';
+              Value = ''
+                [
+                  {
+                    "url": "https://mail.dany.dev",
+                    "label": "Webmail",
+                    "searchTopSite": false
+                  }
+                ]
+              '';
             };
             "browser.uiCustomization.state" = {
               Status = "locked";
@@ -168,10 +174,18 @@ in {
                 }
               '';
             };
+            "browser.translations.neverTranslateLanguages" = {
+              Value = "nl";
+              Status = "locked";
+            };
           };
         };
         profiles.default = {
           search = {
+            force = true;
+            default = "DuckDuckGo";
+            order = ["DuckDuckGo" "Google"];
+
             engines = {
               "Nix Packages" = {
                 urls = [
@@ -211,9 +225,6 @@ in {
               "DuckDuckGo".metaData.alias = "@d";
               "Google".metaData.alias = "@g";
             };
-            default = "DuckDuckGo";
-            force = true;
-            order = ["DuckDuckGo" "Google"];
           };
         };
       };
