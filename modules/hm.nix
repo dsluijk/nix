@@ -32,7 +32,6 @@ in {
             btop
             vim
             acpi
-            comma
           ];
         };
       };
