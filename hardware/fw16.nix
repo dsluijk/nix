@@ -27,8 +27,6 @@
   # Custom stuff here
   # Framework updater
   services.fwupd.enable = true;
-  # Battery optimalizations.
-  services.tlp.enable = true;
   # For the Windows dualboot.
   time.hardwareClockInLocalTime = true;
 }
