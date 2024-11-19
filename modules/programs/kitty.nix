@@ -23,6 +23,12 @@ in {
 
         shellIntegration.enableZshIntegration = config.modules.tools.shell.enable;
       };
+
+      programs.zsh = {
+        shellAliases = {
+          ssh = "kitten ssh";
+        };
+      };
     };
   };
 }
