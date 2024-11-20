@@ -25,8 +25,11 @@
 
   # ----
   # Custom stuff here
+
   # Framework updater
   services.fwupd.enable = true;
   # For the Windows dualboot.
   time.hardwareClockInLocalTime = true;
+  # Input module
+  hardware.framework.inputmodule.enable = true;
 }
