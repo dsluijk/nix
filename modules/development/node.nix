@@ -18,6 +18,8 @@ in {
       home.packages = [
         cfg.package
         pkgs.yarn
+        pkgs.pnpm
+        pkgs.bun
       ];
     };
   };
