@@ -10,6 +10,7 @@ in {
   options.modules.user = {
     username = mkStrOpt "dsluijk";
     sudo = mkBoolOpt true;
+    dialout = mkBoolOpt true;
     authorizedKeys = mkOpt (types.listOf types.str) [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICPboZ99kJlrtxjdkUSmvVbgLicyEXrS4PGmXKBs7ptp me@dany.dev"
     ];
@@ -20,7 +21,10 @@ in {
       isNormalUser = true;
       home = "/home/${cfg.username}";
       initialPassword = "changeme";
-      extraGroups = mkIf cfg.sudo ["wheel"];
+      extraGroups = mkMerge [
+        (mkIf cfg.sudo ["wheel"])
+        (mkIf cfg.dialout ["dialout"])
+      ];
       openssh.authorizedKeys.keys = cfg.authorizedKeys;
     };
   };
