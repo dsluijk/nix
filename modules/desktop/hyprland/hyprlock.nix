@@ -19,8 +19,9 @@ in {
           general = {
             grace = 5;
             hide_cursor = true;
-            enable_fingerprint = true;
           };
+
+          auth.fingerprint.enabled = true;
 
           background = [
             {
