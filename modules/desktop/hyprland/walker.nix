@@ -41,7 +41,7 @@ in {
           ];
 
           builtins = {
-            applications.actions = false;
+            applications.actions.enabled = false;
             applications.context_aware = false;
             applications.show_generic = false;
             websearch.engines = ["duckduckgo"];

@@ -12,7 +12,7 @@ with lib.my; let
 in {
   config = mkIf cfg.enable {
     fonts.packages = with pkgs; [
-      (nerdfonts.override {fonts = ["JetBrainsMono"];})
+      nerd-fonts.jetbrains-mono
     ];
 
     services.upower.enable = true;
@@ -27,7 +27,7 @@ in {
         packages = [pkgs.hyprsunset];
 
         file = {
-          ".cache/ags/hyprpanel/options.json" = {
+          ".config/hyprpanel/config.json" = {
             executable = false;
             text = builtins.toJSON {
               wallpaper.enable = false;

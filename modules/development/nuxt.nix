@@ -23,13 +23,14 @@ in {
       ];
     };
 
-    programs = {
-      nix-ld.enable = true;
+    # https://github.com/NixOS/nixpkgs/pull/377334
+    # programs = {
+    #   nix-ld.enable = true;
 
-      nix-ld.libraries = with pkgs; [
-        wrangler
-      ];
-    };
+    #   nix-ld.libraries = with pkgs; [
+    #     wrangler
+    #   ];
+    # };
 
     home-manager.users.${config.modules.user.username} = {pkgs, ...}: {
       home = {

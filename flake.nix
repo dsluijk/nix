@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:dsluijk/nixpkgs/inputmodule-control";
+    nixpkgs.url = "github:NixOS/nixpkgs";
     flake-compat.url = "github:edolstra/flake-compat";
 
     nixos-hardware = {

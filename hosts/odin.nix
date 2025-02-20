@@ -26,7 +26,7 @@
 
     bluetooth.enable = true;
 
-    theme.wallpaper = ../assets/wallpapers/mountains.jpg;
+    theme.wallpaper = ../assets/wallpapers/DSC01430.jpg;
 
     desktop.hyprland = {
       enable = true;
