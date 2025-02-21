@@ -52,6 +52,12 @@ in {
           owner = "headscale";
           group = "headscale";
         };
+        immich = {
+          file = ../secrets/immich.age;
+          mode = "500";
+          owner = config.services.immich.user;
+          group = config.services.immich.group;
+        };
       };
     };
   };

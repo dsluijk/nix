@@ -39,6 +39,7 @@
       outline.enable = true;
       headscale.enable = true;
       blocky.enable = true;
+      immich.enable = true;
 
       plex = {
         enable = true;
