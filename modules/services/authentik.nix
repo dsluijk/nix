@@ -52,11 +52,11 @@ in {
     modules = {
       secrets.required = ["authentik"];
 
-      impermanence = {
-        safe.folders = [
-          "/var/lib/authentik/media"
-        ];
-      };
+      # impermanence = {
+      #   safe.folders = [
+      #     "/var/lib/authentik/media"
+      #   ];
+      # };
 
       services.postgres = {
         enable = true;
