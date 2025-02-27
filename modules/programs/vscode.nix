@@ -11,6 +11,7 @@ in {
   options.modules.programs.vscode = {
     enable = mkBoolOpt false;
     additionalExtensions = mkOpt (types.listOf types.package) [];
+    settings = mkOpt types.attrs {};
   };
 
   config = mkIf cfg.enable {
@@ -24,18 +25,21 @@ in {
         enableUpdateCheck = false;
         enableExtensionUpdateCheck = false;
         mutableExtensionsDir = false;
-        userSettings = {
-          "window.titleBarStyle" = "custom";
-          "editor.formatOnSave" = true;
-          "editor.defaultFormatter" = "esbenp.prettier-vscode";
-          "update.showReleaseNotes" = false;
-          "workbench.startupEditor" = "none";
-          "alejandra.program" = "alejandra";
-          "redhat.telemetry.enabled" = false;
-          "[nix]" = {
-            "editor.defaultFormatter" = "kamadorueda.alejandra";
-          };
-        };
+        userSettings =
+          recursiveUpdate
+          {
+            "window.titleBarStyle" = "custom";
+            "editor.formatOnSave" = true;
+            "editor.defaultFormatter" = "esbenp.prettier-vscode";
+            "update.showReleaseNotes" = false;
+            "workbench.startupEditor" = "none";
+            "alejandra.program" = "alejandra";
+            "redhat.telemetry.enabled" = false;
+            "[nix]" = {
+              "editor.defaultFormatter" = "kamadorueda.alejandra";
+            };
+          }
+          cfg.settings;
         extensions = with vscode-extensions;
           [
             esbenp.prettier-vscode
