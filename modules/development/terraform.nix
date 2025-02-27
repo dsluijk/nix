@@ -14,6 +14,12 @@ in {
   };
 
   config = mkIf cfg.enable {
+    home-manager.users.${config.modules.user.username} = {pkgs, ...}: {
+      home.packages = [
+        pkgs.terraform
+      ];
+    };
+
     modules = {
       programs.vscode = {
         additionalExtensions = with vscode-extensions; [
