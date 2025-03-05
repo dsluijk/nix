@@ -22,7 +22,7 @@ in {
 
     modules = {
       programs.vscode = {
-        additionalExtensions = with vscode-extensions; [
+        extensions = with vscode-extensions; [
           hashicorp.terraform
         ];
 

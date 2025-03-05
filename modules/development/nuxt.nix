@@ -17,7 +17,7 @@ in {
     modules = {
       development.node.enable = true;
 
-      programs.vscode.additionalExtensions = with vscode-extensions; [
+      programs.vscode.extensions = with vscode-extensions; [
         vue.volar
         antfu.goto-alias
       ];
