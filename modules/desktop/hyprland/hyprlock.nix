@@ -39,7 +39,7 @@ in {
             placeholder_text = "";
             outline_thickness = 2;
             size = "450, 70";
-            position = "0, -400";
+            position = "0, -350";
           };
 
           label = [
@@ -66,7 +66,7 @@ in {
               text = "$FPRINTPROMPT";
               color = "rgba(${rgb "base04"}, 1.0)";
               font_size = 21;
-              position = "0, -300";
+              position = "0, -270";
               halign = "center";
               valign = "center";
             }
