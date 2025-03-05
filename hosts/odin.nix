@@ -57,7 +57,6 @@
       nuxt.enable = true;
       python.enable = true;
       docker.enable = true;
-      cg.enable = true;
       ccache.enable = true;
       terraform.enable = true;
     };
