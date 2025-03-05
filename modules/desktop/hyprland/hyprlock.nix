@@ -63,7 +63,7 @@ in {
             }
             {
               monitor = "";
-              text = "$FPRINTMESSAGE";
+              text = "$FPRINTPROMPT";
               color = "rgba(${rgb "base04"}, 1.0)";
               font_size = 21;
               position = "0, -300";
