@@ -54,7 +54,7 @@ in {
 
       impermanence = {
         safe.folders = [
-          "/var/lib/private/authentik/media"
+          "/var/lib/private/authentik"
         ];
       };
 
