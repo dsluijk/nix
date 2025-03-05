@@ -40,6 +40,7 @@
       headscale.enable = true;
       blocky.enable = true;
       immich.enable = true;
+      nextcloud.enable = true;
 
       plex = {
         enable = true;
