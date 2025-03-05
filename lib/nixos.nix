@@ -53,7 +53,7 @@ in {
     nixosSystem {
       inherit system;
       specialArgs = {
-        inherit lib inputs system self pkgs;
+        inherit lib inputs system self;
         vscode-extensions = inputs.nix-vscode-extensions.extensions.${sys}.vscode-marketplace;
       };
       modules = [

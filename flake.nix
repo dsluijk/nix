@@ -28,8 +28,7 @@
     };
 
     stylix = {
-      # https://github.com/danth/stylix/pull/610
-      url = "github:danth/stylix/762c07ee10b381bc8e085be5b6c2ec43139f13b0";
+      url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs."home-manager".follows = "home-manager";
       inputs.flake-compat.follows = "flake-compat";
@@ -43,7 +42,6 @@
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-compat.follows = "flake-compat";
     };
 
     nixos-mailserver = {
@@ -54,14 +52,11 @@
 
     authentik-nix = {
       url = "github:nix-community/authentik-nix";
-      # inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-compat.follows = "flake-compat";
     };
 
     hyprpanel = {
-      # See https://github.com/Jas-SinghFSU/HyprPanel/pull/497
-      # url = "github:Jas-SinghFSU/HyprPanel";
-      url = "github:dsluijk/HyprPanel";
+      url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

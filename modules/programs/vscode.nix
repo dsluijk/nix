@@ -46,7 +46,7 @@ in {
             jnoortheen.nix-ide
             editorconfig.editorconfig
             kamadorueda.alejandra
-            ms-vscode-remote.remote-containers
+            # ms-vscode-remote.remote-containers
           ]
           ++ cfg.additionalExtensions;
       };

@@ -23,33 +23,24 @@ in {
 
           auth.fingerprint.enabled = true;
 
-          background = [
-            {
-              monitor = "";
-              path = "screenshot";
-              blur_size = 6;
-              blur_passes = 3;
-              brightness = 0.6;
-              vibrancy = 0.25;
-            }
-          ];
+          background = {
+            monitor = "";
+            path = lib.mkForce "screenshot";
+            blur_size = 6;
+            blur_passes = 3;
+            brightness = 0.6;
+            vibrancy = 0.25;
+          };
 
-          input-field = [
-            {
-              monitor = "";
-              fade_on_empty = true;
-              rounding = 6;
-              placeholder_text = "";
-              outer_color = "rgba(${rgb "base02"}, 0.6)";
-              inner_color = "rgba(${rgb "base00"}, 0.6)";
-              font_color = "rgba(${rgb "base05"}, 1.0)";
-              check_color = "rgba(${rgb "base01"}, 1.0)";
-              fail_color = "rgba(${rgb "base08"}, 1.0)";
-              outline_thickness = 2;
-              size = "450, 70";
-              position = "0, -400";
-            }
-          ];
+          input-field = {
+            monitor = "";
+            fade_on_empty = true;
+            rounding = 6;
+            placeholder_text = "";
+            outline_thickness = 2;
+            size = "450, 70";
+            position = "0, -400";
+          };
 
           label = [
             {
