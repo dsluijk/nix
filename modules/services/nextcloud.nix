@@ -52,6 +52,15 @@ in {
           enable = true;
           extraUsers = ["nextcloud"];
         };
+
+        nginx = {
+          enable = true;
+
+          extraHosts.${config.services.nextcloud.hostName} = {
+            forceSSL = true;
+            enableACME = true;
+          };
+        };
       };
     };
   };
