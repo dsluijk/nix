@@ -22,6 +22,7 @@ in {
       hostName = "files.dany.dev";
       https = true;
       settings.overwriteprotocol = "https";
+      database.createLocally = true;
 
       extraAppsEnable = true;
       extraApps = with ncpkg.packages.apps; {
@@ -31,6 +32,7 @@ in {
       config = {
         adminuser = "root";
         adminpassFile = toString pwdFile;
+        dbtype = "pgsql";
         defaultPhoneRegion = "NL";
       };
     };
