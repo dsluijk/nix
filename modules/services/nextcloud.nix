@@ -30,7 +30,7 @@ in {
 
       config = {
         adminuser = "root";
-        adminpassFile = pwdFile;
+        adminpassFile = toString pwdFile;
         defaultPhoneRegion = "NL";
       };
     };
