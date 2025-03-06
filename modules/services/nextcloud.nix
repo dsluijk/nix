@@ -21,7 +21,6 @@ in {
       configureRedis = true;
       hostName = "files.dany.dev";
       https = true;
-      settings.overwriteprotocol = "https";
       database.createLocally = true;
 
       extraAppsEnable = true;
@@ -29,11 +28,15 @@ in {
         inherit user_oidc;
       };
 
+      settings = {
+        overwriteprotocol = "https";
+        default_phone_region = "NL";
+      };
+
       config = {
         adminuser = "root";
         adminpassFile = toString pwdFile;
         dbtype = "pgsql";
-        defaultPhoneRegion = "NL";
       };
     };
 
