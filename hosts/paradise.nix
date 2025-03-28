@@ -98,27 +98,6 @@
             };
           };
 
-          "image.dany.dev" = {
-            addSSL = true;
-            enableACME = true;
-
-            locations."/" = {
-              proxyPass = "http://10.42.0.13:2283";
-              extraConfig = ''
-                client_max_body_size "1G";
-              '';
-            };
-          };
-
-          "request.dany.dev" = {
-            addSSL = true;
-            enableACME = true;
-
-            locations."/" = {
-              proxyPass = "http://10.42.0.26:5000";
-            };
-          };
-
           "recipes.dany.dev" = {
             addSSL = true;
             enableACME = true;
@@ -128,15 +107,6 @@
               extraConfig = ''
                 client_max_body_size "50M";
               '';
-            };
-          };
-
-          "tautulli.dany.dev" = {
-            addSSL = true;
-            enableACME = true;
-
-            locations."/" = {
-              proxyPass = "http://10.42.0.24:8181";
             };
           };
         };
