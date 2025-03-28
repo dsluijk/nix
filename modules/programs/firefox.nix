@@ -24,7 +24,7 @@ in {
           DisableTelemetry = true;
           PrimaryPassword = false;
           SearchEngines = {
-            Default = "DuckDuckGo";
+            Default = "ddg";
             PreventInstalls = true;
           };
           UserMessaging = {
@@ -183,8 +183,8 @@ in {
         profiles.default = {
           search = {
             force = true;
-            default = "DuckDuckGo";
-            order = ["DuckDuckGo" "Google"];
+            default = "ddg";
+            order = ["ddg" "google"];
 
             engines = {
               "Nix Packages" = {
@@ -208,22 +208,47 @@ in {
                 definedAliases = ["@np"];
               };
 
+              "NixOS Options" = {
+                urls = [
+                  {
+                    template = "https://search.nixos.org/options";
+                    params = [
+                      {
+                        name = "type";
+                        value = "packages";
+                      }
+                      {
+                        name = "channel";
+                        value = "unstable";
+                      }
+                      {
+                        name = "query";
+                        value = "{searchTerms}";
+                      }
+                    ];
+                  }
+                ];
+
+                icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+                definedAliases = ["@np"];
+              };
+
               "NixOS Wiki" = {
                 urls = [{template = "https://nixos.wiki/index.php?search={searchTerms}";}];
-                iconUpdateURL = "https://nixos.wiki/favicon.png";
+                icon = "https://nixos.wiki/favicon.png";
                 updateInterval = 24 * 60 * 60 * 1000; # every day
                 definedAliases = ["@nw"];
               };
 
               "Home-Manager Settings" = {
                 urls = [{template = "https://home-manager-options.extranix.com/?query={searchTerms}";}];
-                iconUpdateURL = "https://home-manager-options.extranix.com/images/favicon.png";
+                icon = "https://home-manager-options.extranix.com/images/favicon.png";
                 updateInterval = 24 * 60 * 60 * 1000; # every day
                 definedAliases = ["@hm"];
               };
 
-              "DuckDuckGo".metaData.alias = "@d";
-              "Google".metaData.alias = "@g";
+              "ddg".metaData.alias = "@d";
+              "google".metaData.alias = "@g";
             };
           };
         };
