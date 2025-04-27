@@ -13,7 +13,7 @@ in {
     dataDir = mkStrOpt "/data/nietflix";
   };
 
-  config = mkIf enabled {
+  config = mkIf cfg.enable {
     users.groups.nietflix = {};
   };
 }
