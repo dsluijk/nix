@@ -22,12 +22,12 @@ in {
 
       settings = {
         BASE_URL = "https://${domain}";
-        ALLOW_SIGNUP = false;
+        ALLOW_SIGNUP = "False";
         DB_ENGINE = "postgres";
         POSTGRES_URL_OVERRIDE = "postgresql://mealie:@/mealie?host=/run/postgresql";
 
-        OIDC_AUTH_ENABLED = true;
-        OIDC_AUTO_REDIRECT = true;
+        OIDC_AUTH_ENABLED = "True";
+        OIDC_AUTO_REDIRECT = "True";
         OIDC_PROVIDER_NAME = "Authentik";
         OIDC_CONFIGURATION_URL = "https://login.dany.dev/application/o/mealie/.well-known/openid-configuration";
       };
