@@ -23,6 +23,8 @@ in {
       openFirewall = cfg.openFirewall;
     };
 
+    users.users.plex.extraGroups = ["nietflix"];
+
     modules.services.nginx = {
       enable = true;
       extraHosts = {

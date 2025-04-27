@@ -12,4 +12,8 @@ in {
     enable = mkBoolOpt false;
     dataDir = mkStrOpt "/data/nietflix";
   };
+
+  config = mkIf enabled {
+    users.groups.nietflix = {};
+  };
 }
