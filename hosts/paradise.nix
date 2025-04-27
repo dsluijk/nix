@@ -41,6 +41,7 @@
       blocky.enable = true;
       immich.enable = true;
       nextcloud.enable = true;
+      mealie.enable = true;
 
       plex = {
         enable = true;

@@ -58,6 +58,12 @@ in {
           owner = config.services.immich.user;
           group = config.services.immich.group;
         };
+        mealie = {
+          file = ../secrets/mealie.age;
+          mode = "500";
+          owner = "mealie";
+          group = "mealie";
+        };
       };
     };
   };
