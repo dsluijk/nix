@@ -29,6 +29,7 @@ in {
         OIDC_AUTH_ENABLED = "True";
         OIDC_AUTO_REDIRECT = "True";
         OIDC_PROVIDER_NAME = "Authentik";
+        OIDC_ADMIN_GROUP = "admin";
         OIDC_CONFIGURATION_URL = "https://login.dany.dev/application/o/mealie/.well-known/openid-configuration";
       };
     };
