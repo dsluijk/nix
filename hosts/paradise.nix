@@ -74,30 +74,6 @@
             };
           };
 
-          "books.dany.dev" = {
-            addSSL = true;
-            enableACME = true;
-
-            locations."/" = {
-              proxyPass = "http://10.42.0.27:8083";
-              extraConfig = ''
-                client_max_body_size "1G";
-              '';
-            };
-          };
-
-          "cloud.dany.dev" = {
-            addSSL = true;
-            enableACME = true;
-
-            locations."/" = {
-              proxyPass = "http://10.42.0.15:8080";
-              extraConfig = ''
-                client_max_body_size "10G";
-              '';
-            };
-          };
-
           "recipes.dany.dev" = {
             addSSL = true;
             enableACME = true;
