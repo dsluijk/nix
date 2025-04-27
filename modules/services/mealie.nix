@@ -33,12 +33,14 @@ in {
       };
     };
 
+    systemd.services.mealie.environment.DATA_DIR = mkForce "/var/lib/private/mealie";
+
     modules = {
       secrets.required = ["mealie"];
 
       impermanence = {
         safe.folders = [
-          "/var/lib/private/mealie"
+          config.systemd.services.mealie.environment.DATA_DIR
         ];
       };
 
