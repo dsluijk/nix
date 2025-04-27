@@ -43,9 +43,9 @@
       nextcloud.enable = true;
       mealie.enable = true;
 
-      plex = {
+      nietflix = {
         enable = true;
-        dataDir = "/data/plex";
+        dataDir = "/data/nietflix";
       };
 
       tailscale = {

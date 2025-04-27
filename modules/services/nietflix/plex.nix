@@ -6,18 +6,20 @@
 }:
 with lib;
 with lib.my; let
-  cfg = config.modules.services.plex;
+  nietflixCfg = config.modules.services.nietflix;
+  cfg = nietflixCfg.plex;
+  enabled = nietflixCfg.enable && cfg.enable;
+  plexDir = "${nietflixCfg.dataDir}/plex";
 in {
-  options.modules.services.plex = {
-    enable = mkBoolOpt false;
-    dataDir = mkStrOpt "/data/plex";
+  options.modules.services.nietflix.plex = {
+    enable = mkBoolOpt true;
     openFirewall = mkBoolOpt true;
   };
 
-  config = mkIf cfg.enable {
+  config = mkIf enabled {
     services.plex = {
       enable = true;
-      dataDir = cfg.dataDir;
+      dataDir = plexDir;
       openFirewall = cfg.openFirewall;
     };
 
