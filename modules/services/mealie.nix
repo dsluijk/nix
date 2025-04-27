@@ -40,7 +40,7 @@ in {
 
       impermanence = {
         safe.folders = [
-          config.systemd.services.mealie.environment.DATA_DIR
+          "/var/lib/private/mealie"
         ];
       };
 
