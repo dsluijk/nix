@@ -38,7 +38,7 @@ in {
 
       impermanence = {
         safe.folders = [
-          "/var/lib/mealie"
+          "/var/lib/private/mealie"
         ];
       };
 

@@ -62,7 +62,7 @@ in {
           file = ../secrets/mealie.age;
           mode = "500";
           owner = "mealie";
-          group = "mealie";
+          group = "users";
         };
       };
     };
