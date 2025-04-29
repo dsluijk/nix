@@ -63,7 +63,7 @@ in {
             };
 
             "/outpost.goauthentik.io" = {
-              proxyPass = "http://localhost:9000/outpost.goauthentik.io";
+              proxyPass = "https://login.dany.dev/outpost.goauthentik.io";
               extraConfig = ''
                 proxy_set_header        Host $host;
                 proxy_set_header        X-Original-URL $scheme://$http_host$request_uri;
