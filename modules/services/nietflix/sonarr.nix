@@ -31,6 +31,11 @@ in {
           enableACME = true;
           http2 = true;
 
+          extraConfig = ''
+            proxy_buffers 8 16k;
+            proxy_buffer_size 32k;
+          '';
+
           locations = {
             "/" = {
               proxyPass = "http://localhost:8989/";
