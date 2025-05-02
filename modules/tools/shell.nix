@@ -38,7 +38,7 @@ in {
             size = 10000;
           };
 
-          initExtra = ''
+          initContent = ''
             setopt INC_APPEND_HISTORY
             unsetopt HIST_SAVE_BY_COPY
           '';
