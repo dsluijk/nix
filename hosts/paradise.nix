@@ -74,18 +74,6 @@
               return = "302 https://dany.dev";
             };
           };
-
-          "recipes.dany.dev" = {
-            addSSL = true;
-            enableACME = true;
-
-            locations."/" = {
-              proxyPass = "http://10.42.0.21:80";
-              extraConfig = ''
-                client_max_body_size "50M";
-              '';
-            };
-          };
         };
       };
     };
