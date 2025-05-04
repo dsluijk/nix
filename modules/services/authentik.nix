@@ -49,6 +49,10 @@ in {
       };
     };
 
+    services.nginx.virtualHosts."login.dany.dev".locations."/" = {
+      recommendedProxySettings = true;
+    };
+
     modules = {
       secrets.required = ["authentik"];
 
