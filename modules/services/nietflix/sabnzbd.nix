@@ -9,7 +9,7 @@ with lib.my; let
   nietflixCfg = config.modules.services.nietflix;
   cfg = nietflixCfg.sabnzbd;
   enabled = nietflixCfg.enable && cfg.enable;
-  # sabnzbdDir = "${nietflixCfg.dataDir}/sabnzbd";
+  sabnzbdDir = "${nietflixCfg.dataDir}/sabnzbd";
 in {
   options.modules.services.nietflix.sabnzbd = {
     enable = mkBoolOpt true;
@@ -18,7 +18,7 @@ in {
   config = mkIf enabled {
     services.sabnzbd = {
       enable = true;
-      # configFile = "${sabnzbdDir}/sabnzbd.ini";
+      configFile = "${sabnzbdDir}/sabnzbd.ini";
     };
 
     users.users.sabnzbd.extraGroups = ["nietflix"];
