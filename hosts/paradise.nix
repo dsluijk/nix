@@ -10,6 +10,23 @@
 
   system.stateVersion = "24.05";
 
+  networking = {
+    interfaces.eno1 = {
+      ipv4.addresses = [
+        {
+          address = "10.42.0.2";
+          prefixLength = 32;
+        }
+      ];
+    };
+    defaultGateway = {
+      address = "10.42.0.1";
+      interface = "eno1";
+    };
+    nameservers = ["10.42.0.1" "1.1.1.1" "8.8.8.8"];
+    firewall.enable = true;
+  };
+
   modules = {
     hm.stateVersion = "24.05";
 
@@ -20,11 +37,6 @@
       extraDisks = {
         "/data" = "/dev/disk/by-id/ata-Samsung_SSD_870_QVO_4TB_S5STNF0W910195X";
       };
-    };
-
-    wireless = {
-      enable = true;
-      extra = {};
     };
 
     theme.wallpaper = ../assets/wallpapers/national.jpg;
@@ -78,15 +90,4 @@
       };
     };
   };
-
-  # TEMP: force a static, wireless IP. Should change this when we are wired.
-  networking.interfaces.wlp2s0.ipv4.addresses = [
-    {
-      address = "10.42.0.69";
-      prefixLength = 24;
-    }
-  ];
-  networking.defaultGateway = "10.42.0.1";
-  networking.nameservers = ["10.42.0.1" "1.1.1.1" "8.8.8.8"];
-  networking.firewall.enable = true;
 }

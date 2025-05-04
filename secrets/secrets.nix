@@ -6,7 +6,7 @@ let
   paradise = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDaDZQr1pggZj1l9HjYXVhRljP7QiEVUNN2YJR/I2UiT";
   systems = [odin paradise];
 in {
-  "wireless.age".publicKeys = systems ++ users;
+  "wireless.age".publicKeys = [odin] ++ users;
   "authentik.age".publicKeys = [paradise] ++ users;
   "immich.age".publicKeys = [paradise] ++ users;
   "mealie.age".publicKeys = [paradise] ++ users;
