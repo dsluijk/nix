@@ -21,7 +21,7 @@ in {
       dataDir = sonarrDir;
     };
 
-    users.users.sonarr.extraGroups = ["nietflix"];
+    users.users.sonarr.extraGroups = ["nietflix" "sabnzbd"];
 
     modules.services.nginx = {
       enable = true;
