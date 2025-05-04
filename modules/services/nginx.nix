@@ -19,7 +19,6 @@ in {
 
       recommendedGzipSettings = true;
       recommendedOptimisation = true;
-      recommendedProxySettings = true;
       recommendedTlsSettings = true;
 
       sslProtocols = "TLSv1.2 TLSv1.3";

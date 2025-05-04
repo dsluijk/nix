@@ -36,6 +36,7 @@ in {
           locations."/" = {
             proxyPass = "http://localhost:32400/";
             proxyWebsockets = true;
+            recommendedProxySettings = true;
             extraConfig = ''
               send_timeout 100m;
 

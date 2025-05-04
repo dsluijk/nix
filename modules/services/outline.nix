@@ -68,6 +68,7 @@ in {
               locations."/" = {
                 proxyPass = "http://localhost:${toString config.services.outline.port}/";
                 proxyWebsockets = true;
+                recommendedProxySettings = true;
                 extraConfig = ''
                   proxy_set_header  X-Script-Name /;
                   proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;

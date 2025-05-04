@@ -40,6 +40,7 @@ in {
             "/" = {
               proxyPass = "http://localhost:8989/";
               proxyWebsockets = true;
+              recommendedProxySettings = true;
               extraConfig = ''
                 auth_request     /outpost.goauthentik.io/auth/nginx;
                 error_page       401 = @goauthentik_proxy_signin;

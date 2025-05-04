@@ -61,6 +61,7 @@ in {
               locations."/" = {
                 proxyPass = "http://localhost:${toString config.services.mealie.port}/";
                 proxyWebsockets = true;
+                recommendedProxySettings = true;
                 extraConfig = ''
                   proxy_set_header  X-Script-Name /;
                   proxy_set_header  X-Real-IP $remote_addr;
