@@ -38,7 +38,7 @@ in {
 
           locations = {
             "/" = {
-              proxyPass = "http://localhost:${config.services.radarr.settings.server.port}/";
+              proxyPass = "http://localhost:${toString config.services.radarr.settings.server.port}/";
               proxyWebsockets = true;
               recommendedProxySettings = true;
               extraConfig = ''
