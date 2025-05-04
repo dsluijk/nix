@@ -20,6 +20,7 @@ in {
       recommendedGzipSettings = true;
       recommendedOptimisation = true;
       recommendedTlsSettings = true;
+      recommendedProxySettings = mkForce false;
 
       sslProtocols = "TLSv1.2 TLSv1.3";
       sslCiphers = "AES256+EECDH:AES256+EDH:!aNULL";
