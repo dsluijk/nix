@@ -12,6 +12,7 @@ in {
     enable = mkBoolOpt false;
     xwayland = mkBoolOpt false;
     polkit = mkBoolOpt true;
+    fancy = mkBoolOpt true;
   };
 
   config = mkIf cfg.enable {
@@ -62,6 +63,8 @@ in {
             rounding = 3;
             active_opacity = 0.95;
             inactive_opacity = 0.8;
+            blur.enabled = cfg.fancy;
+            shadow.enabled = cfg.fancy;
           };
           windowrulev2 = [
             # Floating, resize, and dimming folder opening.
