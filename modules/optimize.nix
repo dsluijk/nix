@@ -11,6 +11,7 @@ in {
   options.modules.optimize = {
     enable = mkBoolOpt true;
     autoOptimize = mkBoolOpt true;
+    autoUpgrade = mkBoolOpt true;
     allowReboot = mkBoolOpt true;
   };
 
@@ -40,7 +41,7 @@ in {
 
     # Automatically upgrade the system periodically.
     system.autoUpgrade = {
-      enable = true;
+      enable = cfg.autoUpgrade;
       allowReboot = cfg.allowReboot;
       flake = "github:dsluijk/nix";
       flags = [

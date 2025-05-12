@@ -12,7 +12,7 @@
 
   modules = {
     hm.stateVersion = "25.05";
-    optimize.allowReboot = false;
+    optimize.autoUpgrade = false;
 
     disk = {
       device = "/dev/disk/by-id/wwn-0x5002538d00677825";
