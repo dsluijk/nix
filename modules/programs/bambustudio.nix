@@ -18,10 +18,14 @@ in {
       ];
     };
 
-    modules.impermanence = {
-      unsafe.userFolders = [
-        ".config/BambuStudio"
-      ];
+    modules = {
+      desktop.hyprland.xwayland = true;
+
+      impermanence = {
+        unsafe.userFolders = [
+          ".config/BambuStudio"
+        ];
+      };
     };
   };
 }
