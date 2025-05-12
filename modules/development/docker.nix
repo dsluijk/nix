@@ -12,12 +12,14 @@ in {
     enable = mkBoolOpt false;
     compose = mkBoolOpt true;
     autoPrune = mkBoolOpt true;
+    onBoot = mkBoolOpt true;
   };
 
   config = mkIf cfg.enable {
     virtualisation.docker = {
       enable = true;
       autoPrune.enable = cfg.autoPrune;
+      enableOnBoot = cfg.onBoot;
     };
 
     home-manager.users.${config.modules.user.username} = {pkgs, ...}: {
