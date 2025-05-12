@@ -19,6 +19,11 @@
       swapSize = "4G";
     };
 
+    wireless = {
+      enable = true;
+      extra = {};
+    };
+
     theme.wallpaper = ../assets/wallpapers/national.jpg;
 
     desktop.hyprland = {
