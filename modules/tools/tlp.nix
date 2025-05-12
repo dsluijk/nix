@@ -24,7 +24,7 @@ in {
         CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
         CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
 
-        INTEL_GPU_MIN_FREQ_ON_AC = 800;
+        INTEL_GPU_MIN_FREQ_ON_AC = 650;
         INTEL_GPU_MIN_FREQ_ON_BAT = 500;
 
         START_CHARGE_THRESH_BAT0 = 70;
