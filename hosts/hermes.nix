@@ -28,6 +28,7 @@
 
     desktop.hyprland = {
       enable = true;
+      fancy = false;
     };
 
     tools = {
