@@ -34,6 +34,7 @@
 
     tools = {
       git.enable = true;
+      tlp.enable = true;
     };
 
     programs = {
