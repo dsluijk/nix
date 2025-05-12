@@ -66,6 +66,9 @@ in {
             blur.enabled = cfg.fancy;
             shadow.enabled = cfg.fancy;
           };
+          animation = mkIf (!cfg.fancy) [
+            "global, 0"
+          ];
           windowrulev2 = [
             # Floating, resize, and dimming folder opening.
             "float,title:(Open Folder)"
