@@ -26,8 +26,7 @@
     };
 
     tools = {
-      git.enable =
-        true;
+      git.enable = true;
     };
 
     programs = {
@@ -42,7 +41,7 @@
       # discord.enable = true;
       # bambustudio.enable = true;
       vscode.enable = true;
-      # sshagent.enable = true;
+      sshagent.enable = true;
       # steam.enable = true;
     };
 
