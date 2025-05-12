@@ -13,6 +13,7 @@ in {
     xwayland = mkBoolOpt false;
     polkit = mkBoolOpt true;
     fancy = mkBoolOpt true;
+    monitors = mkOpt (types.listOf types.str) [];
   };
 
   config = mkIf cfg.enable {
@@ -52,6 +53,7 @@ in {
           "exec-once" = [
             "sleep 0.5 && hyprlock --immediate"
           ];
+          monitor = cfg.monitors;
           misc = {
             "force_default_wallpaper" = 0;
             "disable_hyprland_logo" = true;

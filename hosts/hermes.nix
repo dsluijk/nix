@@ -29,6 +29,9 @@
     desktop.hyprland = {
       enable = true;
       fancy = false;
+      monitors = [
+        "eDP-1, preferred, 0x0, 0.666667"
+      ];
     };
 
     tools = {
