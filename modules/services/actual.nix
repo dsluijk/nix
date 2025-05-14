@@ -18,21 +18,19 @@ in {
       openFirewall = mkForce false;
       settings = {
         port = 8714;
-        loginMethod = "openid";
-        allowedLoginMethods = ["openid"];
         dataDir = "/var/lib/private/actual";
-        enforceOpenId = true;
-        openId = {
-          issuer = "https://login.dany.dev/application/o/actual/.well-known/openid-configuration";
-          client_id = "xXtR8tAHJBLqkmZ0JTEl6w4n9M4F251GUHPhp55m";
-          client_secret = "OPENID_CLIENT_SECRET";
-          server_hostname = "https://budget.dany.dev";
-          authMethod = "openid";
-        };
       };
     };
 
     systemd.services.actual.serviceConfig.EnvironmentFile = config.age.secrets.actual.path;
+    systemd.services.actual.environment = {
+      ACTUAL_OPENID_DISCOVERY_URL = "https://login.dany.dev/application/o/actual/.well-known/openid-configuration";
+      ACTUAL_OPENID_CLIENT_ID = "xXtR8tAHJBLqkmZ0JTEl6w4n9M4F251GUHPhp55m";
+      ACTUAL_OPENID_SERVER_HOSTNAME = "https://budget.dany.dev";
+      ACTUAL_OPENID_ENFORCE = "true";
+      ACTUAL_LOGIN_METHOD = "openid";
+      ACTUAL_ALLOWED_LOGIN_METHODS = "openid";
+    };
 
     services.nginx.virtualHosts."budget.dany.dev" = {
       enableACME = true;
