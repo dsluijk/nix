@@ -27,12 +27,12 @@ in {
           client_secret = "OPENID_CLIENT_SECRET";
           server_hostname = "https://budget.dany.dev";
           authMethod = "openid";
-          enforce = true;
         };
       };
     };
 
     systemd.services.actual.serviceConfig.EnvironmentFile = config.age.secrets.actual.path;
+    systemd.services.actual.environment.ACTUAL_OPENID_ENFORCE = "true";
 
     services.nginx.virtualHosts."budget.dany.dev" = {
       enableACME = true;
