@@ -64,6 +64,12 @@ in {
           owner = "mealie";
           group = "users";
         };
+        actual = {
+          file = ../secrets/actual.age;
+          mode = "500";
+          owner = "actual";
+          group = "actual";
+        };
       };
     };
   };

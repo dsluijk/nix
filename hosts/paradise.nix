@@ -54,6 +54,7 @@
       immich.enable = true;
       nextcloud.enable = true;
       mealie.enable = true;
+      actual.enable = true;
 
       nietflix = {
         enable = true;
