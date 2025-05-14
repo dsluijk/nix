@@ -35,7 +35,7 @@ in {
     # we'll have to do it ourselves.
     # Taken from: https://github.com/diogotcorreia/dotfiles/blob/nixos/hosts/hera/immich.nix
     systemd.services.actual = let
-      unpatchedConfigFile = config.services.actual.environment.ACTUAL_CONFIG_PATH;
+      unpatchedConfigFile = config.systemd.services.actual.environment.ACTUAL_CONFIG_PATH;
       patchedConfigFile = "/run/actual/config.json";
     in {
       environment = {
