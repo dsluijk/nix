@@ -20,6 +20,7 @@ in {
         port = 8714;
         loginMethod = "openid";
         allowedLoginMethods = ["openid"];
+        dataDir = "/var/lib/private/actual";
         openId = {
           discoveryURL = "https://login.dany.dev/application/o/actual/.well-known/openid-configuration";
           client_id = "xXtR8tAHJBLqkmZ0JTEl6w4n9M4F251GUHPhp55m";
@@ -64,7 +65,7 @@ in {
 
       impermanence = {
         safe.folders = [
-          "/var/lib/actual"
+          "/var/lib/private/actual"
         ];
       };
     };
