@@ -16,7 +16,7 @@ in {
     services.actual = {
       enable = true;
       openFirewall = mkForce false;
-      config = {
+      settings = {
         port = 8714;
         loginMethod = "openid";
         allowedLoginMethods = ["openid"];
