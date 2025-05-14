@@ -32,25 +32,7 @@ in {
       };
     };
 
-    # Since the Actual people don't give us proper env variables for secrets,
-    # we'll have to do it ourselves.
-    # Taken from: https://github.com/diogotcorreia/dotfiles/blob/nixos/hosts/hera/immich.nix
-    systemd.services.actual = let
-      formatType = pkgs.formats.json {};
-      unpatchedConfigFile = formatType.generate "unpatched-config.json" config.services.actual.settings;
-      patchedConfigFile = "/run/actual/config.json";
-    in {
-      environment = {
-        ACTUAL_CONFIG_PATH = lib.mkForce patchedConfigFile;
-      };
-      preStart = ''
-        install -m 600 /dev/null ${patchedConfigFile}
-        ${lib.getExe pkgs.jq} -c \
-          --arg oauthClientSecret "$ACTUAL_OAUTH_CLIENT_SECRET" \
-          '.openId.client_secret += $oauthClientSecret' \
-          ${unpatchedConfigFile} > ${patchedConfigFile}
-      '';
-    };
+    systemd.services.actual.serviceConfig.EnvironmentFile = config.age.secrets.actual.path;
 
     services.nginx.virtualHosts."budget.dany.dev" = {
       enableACME = true;
