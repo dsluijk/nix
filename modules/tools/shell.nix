@@ -20,7 +20,7 @@ in {
     };
 
     home-manager.users.${config.modules.user.username} = {pkgs, ...}: {
-      imports = [inputs.nix-index-database.hmModules.nix-index];
+      imports = [inputs.nix-index-database.homeModules.nix-index];
 
       home.packages = [
         pkgs.chroma

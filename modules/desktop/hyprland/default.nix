@@ -99,10 +99,10 @@ in {
             "ELECTRON_OZONE_PLATFORM_HINT,wayland"
             "NIXOS_OZONE_WL,1"
           ];
-          gestures = {
-            workspace_swipe = true;
-            workspace_swipe_invert = true;
-          };
+          # gestures = {
+          #   workspace_swipe = true;
+          #   workspace_swipe_invert = true;
+          # };
           bind =
             [
               "$mod, Space, exec, walker"

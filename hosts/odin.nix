@@ -47,7 +47,7 @@
       kubectl.enable = true;
       bruno.enable = true;
       discord.enable = true;
-      bambustudio.enable = true;
+      # bambustudio.enable = true;
       vscode.enable = true;
       sshagent.enable = true;
       steam.enable = true;
