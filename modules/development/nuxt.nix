@@ -18,19 +18,21 @@ in {
       development.node.enable = true;
 
       programs.vscode.extensions = with vscode-extensions; [
+        nuxtr.nuxt-vscode-extentions
         vue.volar
         antfu.goto-alias
+        nuxtr.nuxtr-vscode
+        nuxt.mdc
       ];
     };
 
-    # https://github.com/NixOS/nixpkgs/pull/377334
-    # programs = {
-    #   nix-ld.enable = true;
+    programs = {
+      nix-ld.enable = true;
 
-    #   nix-ld.libraries = with pkgs; [
-    #     wrangler
-    #   ];
-    # };
+      nix-ld.libraries = with pkgs; [
+        wrangler
+      ];
+    };
 
     home-manager.users.${config.modules.user.username} = {pkgs, ...}: {
       home = {
