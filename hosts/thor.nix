@@ -48,7 +48,7 @@
     development = {
       node.enable = true;
       nuxt.enable = true;
-      # python.enable = true;
+      python.enable = true;
       docker.enable = true;
       # ccache.enable = true;
       # terraform.enable = true;
