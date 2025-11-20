@@ -32,7 +32,7 @@
     programs = {
       kitty.enable = true;
       firefox.enable = true;
-      # spotify.enable = true;
+      spotify.enable = true;
       # libreoffice.enable = true;
       # mpv.enable = true;
       # loupe.enable = true;
@@ -40,16 +40,16 @@
       # bruno.enable = true;
       # discord.enable = true;
       # bambustudio.enable = true;
-      # vscode.enable = true;
-      # sshagent.enable = true;
+      vscode.enable = true;
+      sshagent.enable = true;
       # steam.enable = true;
     };
 
     development = {
-      # node.enable = true;
-      # nuxt.enable = true;
+      node.enable = true;
+      nuxt.enable = true;
       # python.enable = true;
-      # docker.enable = true;
+      docker.enable = true;
       # ccache.enable = true;
       # terraform.enable = true;
     };
