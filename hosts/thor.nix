@@ -36,7 +36,7 @@
       # libreoffice.enable = true;
       # mpv.enable = true;
       # loupe.enable = true;
-      # kubectl.enable = true;
+      kubectl.enable = true;
       # bruno.enable = true;
       # discord.enable = true;
       # bambustudio.enable = true;
