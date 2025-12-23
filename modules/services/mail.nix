@@ -18,7 +18,7 @@ in {
   config = mkIf cfg.enable {
     mailserver = {
       enable = true;
-      stateVersion = 2;
+      stateVersion = 3;
       fqdn = "mail.dany.dev";
       domains = ["dany.dev" "atlasdev.nl"];
       x509.useACMEHost = config.mailserver.fqdn;
