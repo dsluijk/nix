@@ -20,12 +20,16 @@ in {
       programs.git = {
         enable = true;
         lfs.enable = cfg.lfs;
-        userName = cfg.name;
-        userEmail = cfg.email;
-        extraConfig = {
+
+        settings = {
           pull.ff = "only";
           push.autoSetupRemote = true;
           init.defaultBranch = "main";
+
+          user = {
+            name = cfg.name;
+            email = cfg.email;
+          };
         };
       };
     };

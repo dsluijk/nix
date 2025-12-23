@@ -27,6 +27,7 @@ in {
             Default = "ddg";
             PreventInstalls = true;
           };
+
           UserMessaging = {
             WhatsNew = false;
             ExtensionRecommendations = false;
@@ -36,12 +37,14 @@ in {
             MoreFromMozilla = false;
             Locked = true;
           };
+
           FirefoxHome = {
             SponsoredTopSites = false;
             Pocket = false;
             SponsoredPocket = false;
             Locked = true;
           };
+
           ExtensionSettings = {
             "*".installation_mode = "blocked";
             "uBlock0@raymondhill.net" = {
@@ -180,6 +183,7 @@ in {
             };
           };
         };
+
         profiles.default = {
           search = {
             force = true;
@@ -259,6 +263,8 @@ in {
           MOZ_ENABLE_WAYLAND = 1;
         };
       };
+
+      stylix.targets.firefox.profileNames = ["default"];
     };
 
     modules.impermanence = {

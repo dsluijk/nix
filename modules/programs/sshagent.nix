@@ -15,7 +15,7 @@ in {
     home-manager.users.${config.modules.user.username} = {pkgs, ...}: {
       programs.ssh = {
         enable = true;
-        addKeysToAgent = "yes";
+        enableDefaultConfig = false;
       };
 
       services.ssh-agent.enable = true;
