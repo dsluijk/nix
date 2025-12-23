@@ -30,6 +30,9 @@ in {
             htpasswd_filename = toString htpasswd;
             htpasswd_encryption = "bcrypt";
           };
+          storage = {
+            filesystem_folder = "/var/lib/radicale/collections";
+          };
         };
       };
 

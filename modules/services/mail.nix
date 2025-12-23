@@ -37,7 +37,7 @@ in {
           quota = "100G";
           # TODO: this really shouldn't be in here, especially not public.
           # Should switch to SSO asap.
-          hashedPassword = "$2a$10$6a9NpmHrOQKo3O8yt5efgeNOu0ZMtBTs2ttG.uAizTWhY86srDKeK";
+          hashedPassword = "$2b$05$V.Z2gLyUYGAbX6JWRpjwp.6E95fTEfiG3x503qhysdOY.kWFU.A62";
           aliases = ["@dany.dev" "@atlasdev.nl"];
         };
         "noreply@dany.dev" = {
