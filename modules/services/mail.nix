@@ -18,16 +18,16 @@ in {
   config = mkIf cfg.enable {
     mailserver = {
       enable = true;
+      stateVersion = 2;
       fqdn = "mail.dany.dev";
       domains = ["dany.dev" "atlasdev.nl"];
-      certificateScheme = "acme-nginx";
+      x509.useACMEHost = config.mailserver.fqdn;
       openFirewall = true;
       localDnsResolver = false;
 
       dmarcReporting = {
         enable = true;
         organizationName = "Dany";
-        localpart = "dmarc-noreply";
         domain = "dany.dev";
       };
 
