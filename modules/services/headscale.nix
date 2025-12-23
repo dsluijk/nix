@@ -24,6 +24,7 @@ in {
         dns = {
           base_domain = "tailnet.dany.dev";
           search_domains = ["dany.home"];
+          nameservers.global = ["1.1.1.1" "10.42.0.2"];
         };
 
         database = {
