@@ -41,6 +41,8 @@ in {
           issuer = "https://login.dany.dev/application/o/headscale/";
           client_id = "pO0k3omaCGjksh5gklKzcUmdZIbkkvmSIceOL2yl";
           client_secret_path = config.age.secrets.headscale-oidc.path;
+          only_start_if_oidc_is_available = true;
+          pkce.enabled = true;
           scope = [
             "openid"
             "profile"
