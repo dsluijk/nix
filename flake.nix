@@ -69,7 +69,7 @@
     };
 
     shuttr = {
-      url = "github:dsluijk/shuttr/feat/nixos";
+      url = "github:dsluijk/shuttr";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

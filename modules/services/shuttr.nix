@@ -23,8 +23,8 @@ in {
       secretsFile = config.age.secrets.shuttr.path;
       host = "localhost";
       port = 4562;
-      title = "Gallery - Dany";
-      header = "Gallery - Dany Sluijk";
+      title = "Dany";
+      header = "Dany Sluijk";
       description = "Photo gallery of Dany Sluijk";
       links = [
         {
