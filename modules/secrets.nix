@@ -70,6 +70,12 @@ in {
           owner = "actual";
           group = "actual";
         };
+        shuttr = {
+          file = ../secrets/shuttr.age;
+          mode = "500";
+          owner = "shuttr";
+          group = "shuttr";
+        };
       };
     };
   };

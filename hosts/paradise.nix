@@ -55,6 +55,7 @@
       nextcloud.enable = true;
       mealie.enable = true;
       actual.enable = true;
+      shuttr.enable = true;
 
       nietflix = {
         enable = true;

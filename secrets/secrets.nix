@@ -12,6 +12,7 @@ in {
   "immich.age".publicKeys = [paradise] ++ users;
   "mealie.age".publicKeys = [paradise] ++ users;
   "actual.age".publicKeys = [paradise] ++ users;
+  "shuttr.age".publicKeys = [paradise] ++ users;
 
   "outline/oidc.age".publicKeys = [paradise] ++ users;
   "outline/smtp.age".publicKeys = [paradise] ++ users;

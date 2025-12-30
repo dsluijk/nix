@@ -755,8 +755,30 @@
         "nixos-hardware": "nixos-hardware",
         "nixos-mailserver": "nixos-mailserver",
         "nixpkgs": "nixpkgs_2",
+        "shuttr": "shuttr",
         "stylix": "stylix",
         "walker": "walker"
+      }
+    },
+    "shuttr": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1767105504,
+        "narHash": "sha256-PIfDvXjZSVRu2Nzbr5gcUkh+s8LaVVU3jTE6DwKkxjQ=",
+        "owner": "dsluijk",
+        "repo": "shuttr",
+        "rev": "ba9fe472b82fcc85a5bc2d47bfbb1320ec3002a3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dsluijk",
+        "ref": "feat/nixos",
+        "repo": "shuttr",
+        "type": "github"
       }
     },
     "stylix": {
