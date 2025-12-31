@@ -767,11 +767,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1767196709,
-        "narHash": "sha256-KZdEqhEBjK8InJuVQSROfu+FKApIXSe/CkfH7SjRXb4=",
+        "lastModified": 1767208204,
+        "narHash": "sha256-29LIAwtIL6dg62E00DgXzRJL4FkQxY1KGI0TSy5qXeY=",
         "owner": "dsluijk",
         "repo": "shuttr",
-        "rev": "a7e0395733d5f4fa62efe85609ff8692d181bbfb",
+        "rev": "6227aeb48f224b8a40508bb9e60cf51500eb2469",
         "type": "github"
       },
       "original": {
