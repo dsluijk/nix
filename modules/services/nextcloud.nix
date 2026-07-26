@@ -38,6 +38,16 @@ in {
         adminpassFile = toString pwdFile;
         dbtype = "pgsql";
       };
+
+      poolSettings = {
+        pm = "dynamic";
+        "pm.max_children" = "90";
+        "pm.max_requests" = "500";
+        "pm.max_spare_servers" = "8";
+        "pm.min_spare_servers" = "2";
+        "pm.start_servers" = "2";
+        "pm.status_path" = "/status";
+      };
     };
 
     modules = {
