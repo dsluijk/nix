@@ -34,9 +34,9 @@
       device = "/dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_2TB_S4J4NM0W712895Y";
       swapSize = "32G";
 
-      extraDisks = {
-        "/data" = "/dev/disk/by-id/ata-Samsung_SSD_870_QVO_4TB_S5STNF0W910195X";
-      };
+      # extraDisks = {
+      #   "/data" = "/dev/disk/by-id/ata-Samsung_SSD_870_QVO_4TB_S5STNF0W910195X";
+      # };
     };
 
     theme.wallpaper = ../assets/wallpapers/national.jpg;
