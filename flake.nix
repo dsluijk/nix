@@ -11,6 +11,7 @@
 
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     disko = {
@@ -20,6 +21,8 @@
 
     impermanence = {
       url = "github:nix-community/impermanence";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
 
     home-manager = {
@@ -63,6 +66,7 @@
     hyprpanel = {
       url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs."home-manager".follows = "home-manager";
     };
 
     walker = {
