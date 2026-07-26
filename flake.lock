@@ -1029,11 +1029,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1767399905,
-        "narHash": "sha256-aS0tbAX1OJAGWlVJeEfG3xSyu1F0RYUTn1qOP3P9Vd4=",
+        "lastModified": 1785101834,
+        "narHash": "sha256-j+Dc6VxGlvsTo2ZfO5pZyPBmgZGHWAqJV3DupjIqLU8=",
         "owner": "dsluijk",
         "repo": "shuttr",
-        "rev": "d124f8d2bca23038caaee9b091c3e76372ed511c",
+        "rev": "51c1341a3fb6d88b8aadb49b2b462c0279ab8b46",
         "type": "github"
       },
       "original": {
