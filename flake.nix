@@ -77,7 +77,6 @@
 
     shuttr = {
       url = "github:dsluijk/shuttr";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     noctalia = {
