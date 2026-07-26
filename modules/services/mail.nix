@@ -33,7 +33,7 @@ in {
 
       loginAccounts = {
         "me@dany.dev" = {
-          name = "me@dany.dev";
+          # name = "me@dany.dev";
           quota = "100G";
           # TODO: this really shouldn't be in here, especially not public.
           # Should switch to SSO asap.
@@ -41,7 +41,7 @@ in {
           aliases = ["@dany.dev" "@atlasdev.nl"];
         };
         "noreply@dany.dev" = {
-          name = "noreply@dany.dev";
+          # name = "noreply@dany.dev";
           quota = "1G";
           sendOnly = true;
           # TODO: this really shouldn't be in here, especially not public.
