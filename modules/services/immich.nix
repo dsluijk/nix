@@ -41,7 +41,7 @@ in {
     # Taken from: https://github.com/diogotcorreia/dotfiles/blob/nixos/hosts/hera/immich.nix
     systemd.services.immich-server = let
       unpatchedConfigFile = config.services.immich.environment.IMMICH_CONFIG_FILE;
-      patchedConfigFile = "/run/immich/config.json";
+      patchedConfigFile = "/run/immich/config-patched.json";
     in {
       environment = {
         IMMICH_CONFIG_FILE = lib.mkForce patchedConfigFile;
