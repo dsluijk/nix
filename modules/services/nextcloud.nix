@@ -7,7 +7,7 @@
 with lib;
 with lib.my; let
   cfg = config.modules.services.nextcloud;
-  ncpkg = pkgs.nextcloud33;
+  ncpkg = pkgs.nextcloud34;
   pwdFile = pkgs.writeText "nextcloud-default-password" "TempPasswordReplace!";
 in {
   options.modules.services.nextcloud = {
