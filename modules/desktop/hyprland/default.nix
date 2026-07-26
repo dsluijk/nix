@@ -10,6 +10,7 @@ with lib.my; let
 in {
   options.modules.desktop.hyprland = {
     enable = mkBoolOpt false;
+    autostart = mkBoolOpt true;
     xwayland = mkBoolOpt false;
     polkit = mkBoolOpt true;
     fancy = mkBoolOpt true;
@@ -51,7 +52,7 @@ in {
           "$terminal" = "kitty";
           "$fileManager" = "nautilus";
           "exec-once" = [
-            "sleep 0.5 && hyprlock --immediate"
+            "sleep 0.5 && hyprlock --grace 0"
           ];
           monitor = cfg.monitors;
           misc = {
@@ -71,27 +72,27 @@ in {
           animation = mkIf (!cfg.fancy) [
             "global, 0"
           ];
-          windowrulev2 = [
+          windowrule = [
             # Floating, resize, and dimming folder opening.
-            "float,title:(Open Folder)"
-            "dimaround,title:(Open Folder)"
-            "size 50% 70%,title:(Open Folder)"
-            "center,title:(Open Folder)"
+            "float on, match:title Open Folder"
+            "dim_around on, match:title Open Folder"
+            "size 50% 70%, match:title Open Folder"
+            "center on, match:title Open Folder"
 
             # Floating, resize, and dimming file saving.
-            "float,title:(Save As)"
-            "dimaround,title:(Save As)"
-            "size 50% 70%,title:(Save As)"
-            "center,title:(Save As)"
+            "float on, match:title Save As"
+            "dim_around on, match:title Save As"
+            "size 50% 70%, match:title Save As"
+            "center on, match:title Save As"
 
             # Floating, resize, and dimming polkit.
-            "float,class:(lxqt-policykit-agent)"
-            "dimaround,class:(lxqt-policykit-agent)"
-            "size 20% 25%,class:(lxqt-policykit-agent)"
-            "center,class:(lxqt-policykit-agent)"
+            "float on, match:class lxqt-policykit-agent"
+            "dim_around on, match:class lxqt-policykit-agent"
+            "size 20% 25%, match:class lxqt-policykit-agent"
+            "center on, match:class lxqt-policykit-agent"
 
-            "opacity 1.0 override 0.95 override,class:(firefox)"
-            "opacity 1.0 override 0.95 override,initialtitle:(Visual\ Studio\ Code)"
+            "opacity 1.0 override 0.95 override, match:class firefox"
+            # "opacity 1.0 override 0.95 override,initial match:title Visual\ Studio\ Code"
           ];
           env = [
             "XCURSOR_SIZE,24"
@@ -111,7 +112,7 @@ in {
               "$mod, W, killactive,"
               "$mod, E, exec, $fileManager"
               "$mod, V, togglefloating,"
-              "$mod, L, exec, hyprlock --immediate"
+              "$mod, L, exec, hyprlock --grace 0"
               ", Print, exec, grimblast copy area"
             ]
             ++ (

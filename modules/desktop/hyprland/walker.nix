@@ -12,7 +12,7 @@ with lib.my; let
 in {
   config = mkIf cfg.enable {
     home-manager.users.${config.modules.user.username} = {pkgs, ...}: {
-      imports = [inputs.walker.homeManagerModules.default];
+      imports = [inputs.walker.homeModules.default];
 
       home.packages = [pkgs.libqalculate pkgs.papirus-icon-theme];
 

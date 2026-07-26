@@ -88,7 +88,7 @@ in {
                     right = [
                       "media"
                       "volume"
-                      # "network"
+                      "network"
                       "bluetooth"
                       "hyprsunset"
                       "battery"

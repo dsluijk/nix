@@ -25,8 +25,8 @@ in {
         wireless = {
           file = ../secrets/wireless.age;
           mode = "500";
-          owner = "root";
-          group = "root";
+          owner = "wpa_supplicant";
+          group = "wpa_supplicant";
         };
         authentik = {
           file = ../secrets/authentik.age;

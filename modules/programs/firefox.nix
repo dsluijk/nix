@@ -46,30 +46,39 @@ in {
           };
 
           ExtensionSettings = {
-            "*".installation_mode = "blocked";
+            "*" = {
+              "blocked_install_message" = "Extensions are managed by NixOS";
+              installation_mode = "blocked";
+            };
             "uBlock0@raymondhill.net" = {
               install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
               installation_mode = "force_installed";
+              updates_disabled = true;
             };
             "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
               install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
-              installation_mode = "force_installed";
+              installation_mode = "normal_installed";
+              updates_disabled = true;
             };
             "sponsorBlocker@ajay.app" = {
               install_url = "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
               installation_mode = "force_installed";
+              updates_disabled = true;
             };
             "simple-tab-groups@drive4ik" = {
               install_url = "https://addons.mozilla.org/firefox/downloads/latest/simple-tab-groups/latest.xpi";
               installation_mode = "force_installed";
+              updates_disabled = true;
             };
             "langpack-nl@firefox.mozilla.org" = {
               install_url = "https://addons.mozilla.org/firefox/downloads/latest/nederlands-nl-language-pack/latest.xpi";
               installation_mode = "force_installed";
+              updates_disabled = true;
             };
             "nl-NL@dictionaries.addons.mozilla.org" = {
               install_url = "https://addons.mozilla.org/firefox/downloads/file/3776797/woordenboek_nederlands-4.20.19.xpi";
               installation_mode = "force_installed";
+              updates_disabled = true;
             };
           };
           "3rdparty" = {
@@ -79,6 +88,16 @@ in {
                   base = "https://vault.dany.dev";
                 };
               };
+              # "uBlock0@raymondhill.net" = {
+              #   adminSettings = {
+              #     selectedFilterLists = [
+              #       "ublock-privacy"
+              #       "ublock-badware"
+              #       "ublock-filters"
+              #       "user-filters"
+              #     ];
+              #   };
+              # };
             };
           };
           Preferences = {

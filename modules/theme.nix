@@ -14,7 +14,9 @@ in {
   ];
 
   options.modules.theme = {
-    wallpaper = mkOpt types.path ../../assets/wallpapers/mountains.jpg;
+    wallpaper = mkOpt types.path ../assets/wallpapers/mountains.jpg;
+    wallpaperFolder = mkOpt types.path ../assets/wallpapers;
+    profile = mkOpt types.path ../assets/profile.jpg;
     polarity = mkOpt (types.enum ["dark" "light" "either"]) "dark";
   };
 

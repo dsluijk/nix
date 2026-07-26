@@ -19,7 +19,7 @@
       swapSize = "4G";
     };
 
-    wireless = {
+    networking = {
       enable = true;
       extra = {};
     };

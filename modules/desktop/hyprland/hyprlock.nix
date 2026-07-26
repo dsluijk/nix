@@ -75,7 +75,7 @@ in {
           image = [
             {
               monitor = "";
-              path = toString ../../../assets/profile.jpg;
+              path = ../../../assets/profile.jpg;
               size = 250;
               rounding = 32;
               border_size = 2;

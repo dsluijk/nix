@@ -19,16 +19,26 @@
       swapSize = "64G";
     };
 
-    wireless = {
+    networking = {
       enable = true;
+      networkmanager = true;
       extra = {};
     };
 
     bluetooth.enable = true;
+    hardware = {
+      logitech.enable = true;
+      displaylink.enable = true;
+    };
 
-    theme.wallpaper = ../assets/wallpapers/DSC01430.jpg;
+    theme.wallpaper = ../assets/wallpapers/DSC01792.jpg;
 
     desktop.hyprland = {
+      enable = false;
+      autostart = false;
+    };
+
+    desktop.niri = {
       enable = true;
     };
 
@@ -51,6 +61,9 @@
       vscode.enable = true;
       sshagent.enable = true;
       steam.enable = true;
+      zotero.enable = true;
+      nh.enable = true;
+      claude.enable = true;
     };
 
     development = {
@@ -60,10 +73,16 @@
       docker.enable = true;
       ccache.enable = true;
       terraform.enable = true;
+      latex.enable = true;
+      rust.enable = true;
     };
 
     services = {
-      tailscale.enable = true;
+      tailscale.enable = false;
+    };
+
+    other = {
+      ctf.enable = true;
     };
   };
 }

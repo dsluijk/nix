@@ -54,7 +54,7 @@ in {
       inherit system;
       specialArgs = {
         inherit lib inputs system self;
-        vscode-extensions = inputs.nix-vscode-extensions.extensions.${sys}.vscode-marketplace-release;
+        vscode-extensions = (inputs.nix-vscode-extensions.overlays.default pkgs pkgs).vscode-marketplace-release;
       };
       modules = [
         {

@@ -48,22 +48,22 @@
       roundcube.enable = true;
       vaultwarden.enable = true;
       authentik.enable = true;
-      outline.enable = true;
-      headscale.enable = true;
-      blocky.enable = true;
+      outline.enable = false;
+      headscale.enable = false;
+      blocky.enable = false;
       immich.enable = true;
       nextcloud.enable = true;
       mealie.enable = true;
-      actual.enable = true;
+      actual.enable = false;
       shuttr.enable = true;
 
       nietflix = {
-        enable = true;
+        enable = false;
         dataDir = "/data/nietflix";
       };
 
       tailscale = {
-        enable = true;
+        enable = false;
         routingFeatures = "server";
       };
 

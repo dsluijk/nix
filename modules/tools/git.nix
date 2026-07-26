@@ -20,6 +20,7 @@ in {
       programs.git = {
         enable = true;
         lfs.enable = cfg.lfs;
+        signing.format = null;
 
         settings = {
           pull.ff = "only";

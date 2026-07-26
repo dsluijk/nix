@@ -8,7 +8,7 @@ with lib;
 with lib.my; let
   cfg = config.modules.desktop.hyprland;
 in {
-  config = mkIf cfg.enable {
+  config = mkIf (cfg.enable && cfg.autostart) {
     services.greetd = {
       enable = true;
 
