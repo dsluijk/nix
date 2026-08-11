@@ -1042,11 +1042,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1786439914,
-        "narHash": "sha256-1+stn5ezn42N4z04pXxhrphqL6niFAbiXIN+6OVsoss=",
+        "lastModified": 1786471951,
+        "narHash": "sha256-QnZ+rDNeDFdF3bJzNWrF7W97YAOgJ7eLX6S0cV5IotY=",
         "owner": "dsluijk",
         "repo": "shuttr",
-        "rev": "8859a678b828e0d5646d3cf6798233e247f6066c",
+        "rev": "8caa1ce55bc25e324e14ea8d47d4902442c12f60",
         "type": "github"
       },
       "original": {
