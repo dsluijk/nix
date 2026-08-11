@@ -23,19 +23,6 @@ in {
       secretsFile = config.age.secrets.shuttr.path;
       host = "localhost";
       port = 4562;
-      title = "Dany";
-      header = "Dany Sluijk";
-      description = "Photo gallery of Dany Sluijk";
-      links = [
-        {
-          icon = "i-lucide-house";
-          to = "https://dany.dev";
-        }
-        {
-          icon = "i-simple-icons-github";
-          to = "https://github.com/dsluijk";
-        }
-      ];
 
       auth.authentik = {
         enable = true;
