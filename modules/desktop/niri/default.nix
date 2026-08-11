@@ -2,6 +2,7 @@
   config,
   lib,
   inputs,
+  pkgs,
   ...
 }:
 with lib;
@@ -24,6 +25,12 @@ in {
     programs.niri = {
       enable = true;
       useNautilus = true;
+    };
+
+    xdg.portal = {
+      enable = true;
+      wlr.enable = true;
+      extraPortals = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome];
     };
 
     home-manager.users.${config.modules.user.username} = {pkgs, ...}: {
