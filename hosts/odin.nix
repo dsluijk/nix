@@ -64,6 +64,7 @@
       zotero.enable = true;
       nh.enable = true;
       claude.enable = true;
+      rapidraw.enable = true;
     };
 
     development = {
