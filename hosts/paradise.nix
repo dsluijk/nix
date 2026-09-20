@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    ../hardware/um480xt.nix
+    ../hardware/proxmox.nix
   ];
 
   system.stateVersion = "24.05";
@@ -31,8 +31,8 @@
     hm.stateVersion = "24.05";
 
     disk = {
-      device = "/dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_2TB_S4J4NM0W712895Y";
-      swapSize = "32G";
+      device = "/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi0";
+      swapSize = "8G";
 
       # extraDisks = {
       #   "/data" = "/dev/disk/by-id/ata-Samsung_SSD_870_QVO_4TB_S5STNF0W910195X";
