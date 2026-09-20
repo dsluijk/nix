@@ -11,7 +11,7 @@
   system.stateVersion = "24.05";
 
   networking = {
-    interfaces.eno1 = {
+    interfaces.ens18 = {
       ipv4.addresses = [
         {
           address = "10.42.0.2";
@@ -21,7 +21,7 @@
     };
     defaultGateway = {
       address = "10.42.0.1";
-      interface = "eno1";
+      interface = "ens18";
     };
     nameservers = ["10.42.0.1" "1.1.1.1" "8.8.8.8"];
     firewall.enable = true;
