@@ -112,6 +112,8 @@
       import pkgs {
         inherit system;
         config.allowUnfree = true; # forgive me Stallman senpai
+        # Temporary: Immich 2.7.5 is marked insecure upstream.
+        config.permittedInsecurePackages = ["immich-2.7.5"];
         overlays = extraOverlays ++ (lib.attrValues self.overlays);
       };
 
