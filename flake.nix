@@ -59,7 +59,9 @@
 
     authentik-nix = {
       url = "github:nix-community/authentik-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # Deliberately not following our nixpkgs: authentik-nix pins vendored
+      # pnpm/python dependency hashes against its own nixpkgs, and 26.05 has a
+      # different fetchPnpmDeps implementation, which breaks those hashes.
       inputs.flake-compat.follows = "flake-compat";
     };
 
