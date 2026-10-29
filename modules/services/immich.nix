@@ -33,7 +33,8 @@ in {
       };
     };
 
-    pkgs.config.permittedInsecurePackages = [
+    # Temporary: Immich 2.7.5 is marked insecure upstream.
+    nixpkgs.config.permittedInsecurePackages = [
       "immich-2.7.5"
     ];
 
