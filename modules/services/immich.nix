@@ -33,6 +33,10 @@ in {
       };
     };
 
+    pkgs.config.permittedInsecurePackages = [
+      "immich-2.7.5"
+    ];
+
     users.users.immich.extraGroups = ["video" "render"];
 
     # Since the Immich people don't give us proper env variables for secrets,
