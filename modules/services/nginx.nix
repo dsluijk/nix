@@ -13,7 +13,7 @@ in {
   options.modules.services.nginx = {
     enable = mkBoolOpt false;
     extraHosts = mkOpt types.attrs {};
-    # Server name (nginx `hostnames` map syntax, e.g. "*.apps.dany.dev") -> upstream address.
+    # Server name (nginx `hostnames` map syntax, e.g. ".apps.dany.dev" for the domain and all subdomains) -> upstream address.
     # TLS is passed through untouched with a PROXY protocol header, plain HTTP is reverse proxied.
     passthroughHosts = mkOpt (types.attrsOf types.str) {};
   };

@@ -69,7 +69,7 @@
 
       nginx = {
         enable = true;
-        passthroughHosts."*.apps.dany.dev" = "10.42.0.20";
+        passthroughHosts.".apps.dany.dev" = "10.42.0.20";
         extraHosts = {
           "dany.dev" = {
             default = true;
